@@ -1,11 +1,11 @@
 {
   "expo": {
-    "name": "actio-test",
-    "slug": "actio-test",
+    "name": "actio",
+    "slug": "actio",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "actiotest",
+    "scheme": "actio",
     "userInterfaceStyle": "automatic",
     "ios": {
       "icon": "./assets/expo.icon"
@@ -21,10 +21,26 @@
     },
     "web": {
       "output": "static",
-      "favicon": "./assets/images/favicon.png"
+      "favicon": "./assets/images/favicon.png",
+      "bundler": "metro"
     },
     "plugins": [
       "expo-router",
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "edgeToEdgeEnabled": true
+          }
+        }
+      ],
+      [
+        "expo-navigation-bar",
+        {
+          "enforceContrast": false,
+          "style": "light"
+        }
+      ],
       [
         "expo-splash-screen",
         {
@@ -34,7 +50,28 @@
             "imageWidth": 76
           }
         }
-      ]
+      ],
+      [
+        "expo-font",
+        {
+          "fonts": [
+            "./assets/fonts/ClashDisplay-Bold.otf",
+            "./assets/fonts/SpaceGrotesk-Bold.ttf",
+            "./assets/fonts/SpaceGrotesk-Medium.ttf",
+            "./assets/fonts/SpaceGrotesk-Regular.ttf",
+            "./assets/fonts/Inter-Regular.ttf",
+            "./assets/fonts/Inter-Medium.ttf",
+            "./assets/fonts/Inter-SemiBold.ttf",
+            "./assets/fonts/Inter-Bold.ttf",
+            "./assets/fonts/Inter-Light.ttf",
+            "./assets/fonts/Inter-Thin.ttf",
+            "./assets/fonts/Inter-ExtraLight.ttf"
+          ]
+        }
+      ],
+      "expo-secure-store",
+      "expo-image",
+      "expo-audio"
     ],
     "experiments": {
       "typedRoutes": true,

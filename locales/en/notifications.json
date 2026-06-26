@@ -1,0 +1,74 @@
+{
+  "header": {
+    "title": "Notifications & Alarms"
+  },
+  "badges": {
+    "immediate": "Immediate"
+  },
+  "sections": {
+    "reminders": {
+      "title": "Reminders",
+      "multiple": {
+        "label": "Multiple reminders",
+        "sublabelPro": "3 reminders: 15 min before, on time, 15 min after",
+        "sublabelLocked": "Available with Pro — 3 reminders per task"
+      },
+      "silence": {
+        "label": "Quiet hours",
+        "sublabel": "10:00 PM → 7:00 AM"
+      },
+      "sound": {
+        "label": "Alarm sound",
+        "options": {
+          "classic": "Classic",
+          "soft": "Soft",
+          "digital": "Digital"
+        },
+        "add": "Add a sound..."
+      }
+    },
+    "system": {
+      "title": "System Notifications",
+      "lateTasks": {
+        "label": "Overdue tasks"
+      },
+      "aiTips": {
+        "label": "AI Tips"
+      },
+      "weeklyReport": {
+        "label": "Weekly report",
+        "sublabel": "Summary sent every Monday morning"
+      },
+      "streaks": {
+        "label": "Streaks",
+        "sublabel": "Reminder to keep your streak going"
+      },
+      "garant": {
+        "label": "Guarantor alerts"
+      }
+    },
+    "advanced": {
+      "title": "Advanced",
+      "vibration": {
+        "label": "Vibration",
+        "min": "Soft",
+        "max": "Intense"
+      },
+      "persistent": {
+        "label": "Persistent alarm",
+        "sublabelPro": "The alarm rings until manually confirmed",
+        "sublabelLocked": "Available with Pro"
+      },
+      "lockScreen": {
+        "label": "Override lock screen",
+        "sublabelPro": "The alarm appears over the lock screen",
+        "sublabelLocked": "Available with Pro"
+      },
+      "directAction": {
+        "label": "Direct notification action",
+        "sublabel": "Complete or snooze without opening the app"
+      }
+    }
+  },
+  "testAlarm": "Test an alarm"
+}

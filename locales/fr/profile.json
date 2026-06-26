@@ -1,0 +1,39 @@
+{
+  "header": {
+    "title": "Profil"
+  },
+  "hero": {
+    "pro_badge": "Utilisateur Pro"
+  },
+  "stats": {
+    "score": "Score",
+    "tasks": "Tâches",
+    "streak": "Série"
+  },
+  "sections": {
+    "personal_info": "Informations personnelles"
+  },
+  "personal_info": {
+    "username": "Nom d'utilisateur",
+    "email": "Email",
+    "phone": "Téléphone",
+    "phone_add": "Ajouter un numéro",
+    "member_since": "Membre depuis"
+  },
+  "edit": {
+    "name_title": "Modifier le nom d'utilisateur",
+    "name_placeholder": "Votre nom d'utilisateur",
+    "name_error_required": "Le nom d'utilisateur ne peut pas être vide",
+    "phone_title": "Modifier le numéro",
+    "phone_placeholder": "+225 07 12 34 56 78",
+    "phone_error_invalid": "Numéro invalide — vérifie le format",
+    "save": "Enregistrer",
+    "cancel": "Annuler"
+  },
+  "avatar": {
+    "permission_title": "Accès galerie requis",
+    "permission_message": "Active l'accès à tes photos dans les réglages du téléphone pour changer ta photo de profil.",
+    "error_title": "Une erreur est survenue",
+    "error_message": "Impossible d'ouvrir le sélecteur de photos. Réessaie dans un instant."
+  }
+}

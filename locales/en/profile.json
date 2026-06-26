@@ -1,0 +1,39 @@
+{
+  "header": {
+    "title": "Profile"
+  },
+  "hero": {
+    "pro_badge": "Pro user"
+  },
+  "stats": {
+    "score": "Score",
+    "tasks": "Tasks",
+    "streak": "Streak"
+  },
+  "sections": {
+    "personal_info": "Personal information"
+  },
+  "personal_info": {
+    "username": "Username",
+    "email": "Email",
+    "phone": "Phone",
+    "phone_add": "Add a number",
+    "member_since": "Member since"
+  },
+  "edit": {
+    "name_title": "Edit username",
+    "name_placeholder": "Your username",
+    "name_error_required": "Username can't be empty",
+    "phone_title": "Edit phone number",
+    "phone_placeholder": "+225 07 12 34 56 78",
+    "phone_error_invalid": "Invalid number — check the format",
+    "save": "Save",
+    "cancel": "Cancel"
+  },
+  "avatar": {
+    "permission_title": "Gallery access required",
+    "permission_message": "Enable photo access in your phone settings to change your profile picture.",
+    "error_title": "Something went wrong",
+    "error_message": "Couldn't open the photo picker. Please try again in a moment."
+  }
+}

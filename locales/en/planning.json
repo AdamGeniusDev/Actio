@@ -1,0 +1,36 @@
+{
+  "title": {
+    "week": "This week",
+    "month": "This month"
+  },
+  "nav": {
+    "today": "TODAY",
+    "todayTag": "TODAY"
+  },
+  "toggle": {
+    "week": "Week",
+    "month": "Month"
+  },
+  "stats": {
+    "tasks": "TASKS",
+    "rate": "RATE",
+    "streak": "STREAK",
+    "streakSuffix": "d"
+  },
+  "days": {
+    "short": ["S", "M", "T", "W", "T", "F", "S"],
+    "full": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+  },
+  "months": [
+    "January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December"
+  ],
+  "section": {
+    "taskCount_one": "{{count}} TASK",
+    "taskCount_other": "{{count}} TASKS"
+  },
+  "empty": {
+    "week": "No tasks this week 🎉",
+    "day": "No tasks on {{day}} {{month}}"
+  }
+}

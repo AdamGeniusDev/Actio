@@ -1,0 +1,110 @@
+{
+  "header": {
+    "title": "Mes Garants",
+    "add": "Ajouter"
+  },
+  "search": {
+    "placeholder": "Rechercher un garant...",
+    "empty": "Aucun garant trouvé"
+  },
+  "sections": {
+    "active": "Actifs",
+    "inactive": "Inactifs"
+  },
+  "card": {
+    "alertedAfter": "Alerté après {{minutes}} min",
+    "noActiveTask": "Aucune tâche active"
+  },
+  "relationships": {
+    "family": "Famille",
+    "friend": "Ami",
+    "colleague": "Collègue",
+    "other": "Autre"
+  },
+  "infoBox": {
+    "title": "Comment ça marche ?",
+    "description": "Votre Garant reçoit une notification automatique si vous n'avez pas confirmé l'accomplissement de votre tâche dans le délai imparti."
+  },
+  "actions": {
+    "edit": "Modifier",
+    "delete": "Supprimer",
+    "cancel": "Annuler",
+    "resendInvite": "Renvoyer l'invitation",
+    "deleteConfirmTitle": "Supprimer ce Garant ?",
+    "deleteConfirmMessage": "{{name}} ne recevra plus aucune alerte de votre part.",
+    "statusPending": "Invitation en attente",
+    "statusAppLinked": "Connecté via l'app ACTIO",
+    "statusDirect": "Alertes directes (sans app)",
+    "statusPendingShort": "En attente",
+    "statusAcceptedShort": "Connecté"
+  },
+  "add": {
+    "header": {
+      "title": "Nouveau Garant",
+      "save": "ENREGISTRER"
+    },
+    "mode": {
+      "label": "MODE D'ALERTE",
+      "app": {
+        "title": "Garant avec l'app ACTIO",
+        "desc": "Il reçoit une invitation et installe l'app pour vous suivre"
+      },
+      "direct": {
+        "title": "Garant sans l'app",
+        "desc": "Il reçoit l'alerte par SMS, Email ou WhatsApp, sans rien installer"
+      }
+    },
+    "invite": {
+      "emailLabel": "EMAIL DU GARANT",
+      "note": "Votre garant recevra un email avec un lien pour accepter l'invitation et télécharger l'app."
+    },
+    "contacts": {
+      "title": "Choisir depuis les contacts",
+      "subtitle": "Importer un numéro existant",
+      "permissionDenied": "Accès aux contacts refusé"
+    },
+    "fields": {
+      "firstName": "PRÉNOM",
+      "lastName": "NOM"
+    },
+    "relationship": {
+      "label": "RELATION"
+    },
+    "delay": {
+      "label": "DÉLAI AVANT ALERTE",
+      "lockedNote": "Disponible uniquement à {{minutes}} min sur l'offre gratuite. Passez Pro pour personnaliser ce délai."
+    },
+    "channels": {
+      "label": "CANAUX D'ALERTE",
+      "push": "Notification ACTIO",
+      "email": "Alerte par Email",
+      "sms": "Alerte par SMS",
+      "whatsapp": "Alerte WhatsApp"
+    },
+    "preview": {
+      "label": "APERÇU DU MESSAGE",
+      "predefined": "MESSAGE PRÉ-DÉFINI",
+      "defaultName": "Votre Garant",
+      "message": "\"Hé {{name}}, [Ton prénom] n'a pas encore effectué son action de sécurité ACTIO prévue il y a {{delay}}. Merci de vérifier si tout va bien.\""
+    },
+    "privacy": "Votre Garant ne voit que le titre de votre mission.",
+    "cta": {
+      "invite": "Envoyer l'invitation",
+      "save": "Enregistrer le Garant"
+    },
+    "validation": {
+      "emailRequired": "L'email est obligatoire",
+      "firstNameRequired": "Le prénom est obligatoire"
+    }
+  },
+  "edit": {
+    "header": {
+      "title": "Modifier le Garant"
+    },
+    "modeLocked": "Le mode d'alerte ne peut pas être changé après création",
+    "emailLocked": "L'email ne peut pas être modifié — il est lié à l'invitation envoyée.",
+    "cta": {
+      "save": "Enregistrer les modifications"
+    }
+  }
+}

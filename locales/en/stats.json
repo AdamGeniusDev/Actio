@@ -1,0 +1,68 @@
+{
+  "header": {
+    "title": "My productivity"
+  },
+  "period": {
+    "7j": "7D",
+    "30j": "30D",
+    "tout": "All"
+  },
+  "states": {
+    "error": "Couldn't load your stats right now."
+  },
+  "weeklyGoal": {
+    "sectionTitle": "WEEKLY GOAL"
+  },
+  "activity": {
+    "sectionTitle": "ACTIVITY",
+    "subtitle": "Daily completion rate — tap a day for details",
+    "subtitleWeekly": "Weekly average over the selected period",
+    "thisWeek": "This wk",
+    "weekShort": "Wk -{{n}}"
+  },
+  "breakdown": {
+    "sectionTitle": "BREAKDOWN",
+    "categories": {
+      "work": "Work",
+      "personal": "Personal",
+      "health": "Health",
+      "finance": "Finance"
+    }
+  },
+  "recent": {
+    "sectionTitle": "RECENT",
+    "table": {
+      "date": "DATE",
+      "count": "COUNT",
+      "completion": "COMPLETION"
+    },
+    "tasksCount_one": "{{count}} task",
+    "tasksCount_other": "{{count}} tasks"
+  },
+  "streak": {
+    "label": "CURRENT STREAK",
+    "days_one": "day",
+    "days_other": "days",
+    "averageScore": "Average score",
+    "averageFocus": "Average focus",
+    "message": {
+      "zero": "Finish a task today to start your streak",
+      "low": "Keep going, your streak is off to a good start",
+      "mid_one": "{{count}} more day to reach a full week",
+      "mid_other": "{{count}} more days to reach a full week",
+      "good": "Great consistency, keep it up",
+      "excellent": "Exceptional streak, you're on a roll"
+    }
+  },
+  "day": {
+    "tasksLabel": "{{completed}} of {{total}} tasks",
+    "stats": {
+      "saved": "Saved",
+      "streak": "Streak",
+      "managed": "Managed"
+    },
+    "insightsTitle": "AI INSIGHTS",
+    "completedTitle": "COMPLETED TASKS",
+    "empty": "No tasks completed that day."
+  }
+}

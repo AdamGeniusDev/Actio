@@ -1,0 +1,36 @@
+{
+  "title": {
+    "week": "Cette semaine",
+    "month": "Ce mois"
+  },
+  "nav": {
+    "today": "AUJOURD'HUI",
+    "todayTag": "AUJOURD'HUI"
+  },
+  "toggle": {
+    "week": "Sem.",
+    "month": "Mois"
+  },
+  "stats": {
+    "tasks": "TÂCHES",
+    "rate": "TAUX",
+    "streak": "STREAK",
+    "streakSuffix": "j"
+  },
+  "days": {
+    "short": ["D", "L", "M", "M", "J", "V", "S"],
+    "full": ["Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"]
+  },
+  "months": [
+    "Janvier", "Février", "Mars", "Avril", "Mai", "Juin",
+    "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"
+  ],
+  "section": {
+    "taskCount_one": "{{count}} TÂCHE",
+    "taskCount_other": "{{count}} TÂCHES"
+  },
+  "empty": {
+    "week": "Aucune tâche cette semaine 🎉",
+    "day": "Aucune tâche le {{day}} {{month}}"
+  }
+}

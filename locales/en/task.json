@@ -1,0 +1,118 @@
+{
+  "call_now": "Call now",
+  "reminder": "Reminder: {{time}} · {{category}}",
+  "snooze": {
+    "title": "Snooze for how long?",
+    "currentTask": "Current task",
+    "tomorrow": "Tomorrow",
+    "preciseTime": "Exact time",
+    "confirm": "Confirm snooze",
+    "garantWarning": "Your accountability partner {{name}} will be notified of this snooze.",
+    "options": {
+      "brief":    "Brief",
+      "standard": "Standard",
+      "long":     "Long",
+      "focus":    "Focus",
+      "late":     "Late",
+      "morning":  "Morning"
+    }
+  },
+  "alarm": {
+    "done": "Done!",
+    "ignore": "Ignore",
+    "swipeHint": "Swipe to ignore"
+  },
+  "priorities": {
+    "low": "Low",
+    "medium": "Medium",
+    "high": "High",
+    "critical": "Urgent"
+  },
+  "create": {
+    "title": "New task",
+    "titlePlaceholder": "E.g. Call the client for the brief",
+    "iconType": "Action type",
+    "callConfig": "Number to call",
+    "callNumberPlaceholder": "E.g. +1 555 123 4567",
+    "pickContact": "Choose a contact",
+    "callLabelWithName": "Call {{name}}",
+    "alertMode": "Alert mode",
+    "alertModeTime": "Exact time",
+    "alertModeLocation": "Location",
+    "inMinutes": "+{{count}} min",
+    "inHours": "+{{count}}h",
+    "today": "Today",
+    "date": "Date",
+    "time": "Time",
+    "category": "Category",
+    "priority": "Priority",
+    "garantToggle": "Accountability partner",
+    "garantSubtitle": "Confirmation required — alert if not confirmed",
+    "noGarants": "No active accountability partner — add one in Settings.",
+    "locationSubtitle": "The alert triggers when you arrive, not at a fixed time",
+    "locationProNote": "Available with Pro — alert triggered by your arrival at a place instead of a fixed time.",
+    "useCurrentLocation": "Use my current location",
+    "locating": "Locating...",
+    "locationUnknown": "Current location",
+    "submit": "Create task",
+    "cancel": "Cancel"
+  },
+  "edit": {
+    "title": "Edit task",
+    "taskName": "Task name",
+    "save": "Save changes",
+    "delete": "Delete this task",
+    "deleteConfirmTitle": "Delete this task?",
+    "deleteConfirmMessage": "This action cannot be undone."
+  },
+  "detail": {
+    "notFound": "Task not found",
+    "edit": "Edit",
+    "directAction": "Direct action",
+    "garant": "Accountability partner",
+    "alertAfter": "Alert after {{minutes}} min",
+    "description": "Description",
+    "history": "History",
+    "historyCreated": "Action created",
+    "historyGarantNotified": "Accountability partner notified",
+    "historyStatus": "Status: {{status}}",
+    "status": {
+      "pending": "To do",
+      "inProgress": "In progress",
+      "completed": "Completed",
+      "snoozed": "Snoozed",
+      "failed": "Missed"
+    }
+  },
+  "ai": {
+    "header": { "title": "Create with AI" },
+    "proGate": {
+      "title": "Pro feature",
+      "subtitle": "Describe your task by voice or text, the AI organizes it for you.",
+      "cta": "Discover Pro"
+    },
+    "greeting": "Hi! Describe what you need to do, and I'll organize it for you.",
+    "tapToSpeak": "Tap to speak",
+    "listening": "Listening...",
+    "micSampleResult": "Call ONIP printing tomorrow, it's urgent",
+    "textPlaceholder": "Or type your request here...",
+    "suggestionsLabel": "Suggestions",
+    "suggestions": {
+      "suggestion1": "Call ONIP printing",
+      "suggestion2": "Dentist appointment tomorrow",
+      "suggestion3": "Buy coffee"
+    },
+    "detectedLabel": "Detected result",
+    "createCta": "Create",
+    "modifyCta": "Modify"
+  },
+  "iconTypes": {
+    "call": "Call",
+    "message": "Message",
+    "document": "Document",
+    "payment": "Payment",
+    "event": "Event",
+    "checklist": "Task",
+    "goal": "Goal"
+  }
+}

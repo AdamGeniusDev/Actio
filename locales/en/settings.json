@@ -1,0 +1,182 @@
+{
+  "header": {
+    "title": "Settings"
+  },
+  "sections": {
+    "account": {
+      "title": "Account",
+      "profile": {
+        "fallbackName": "User"
+      },
+      "subscription": {
+        "label": "Subscription",
+        "sublabelPro": "€99.00/yr · Renews on 05/12",
+        "sublabelFree": "Upgrade to ACTIO Pro"
+      }
+    },
+    "app": {
+      "title": "App",
+      "notifications": {
+        "label": "Notifications & Alarms",
+        "subtitle": "Reminders, alerts, sounds"
+      },
+      "garants": {
+        "label": "Accountability Partners",
+        "subtitle_one": "{{count}} active",
+        "subtitle_other": "{{count}} active"
+      },
+      "language": {
+        "label": "Language & Region",
+        "subtitle": "English (US)"
+      }
+    },
+    "advanced": {
+      "title": "Advanced",
+      "permissions": {
+        "label": "Permissions",
+        "subtitle": "Manage system access"
+      },
+      "privacy": {
+        "label": "Privacy",
+        "subtitle": "Security & encryption"
+      }
+    },
+    "support": {
+      "title": "Support",
+      "help": {
+        "label": "Help Center"
+      },
+      "contact": {
+        "label": "Contact Us"
+      },
+      "share": {
+        "label": "Share ACTIO"
+      }
+    }
+  },
+  "logout": {
+    "label": "Log Out",
+    "confirmTitle": "Log out?",
+    "confirmMessage": "You'll need to sign in again to access your data.",
+    "confirm": "Log Out",
+    "cancel": "Cancel"
+  },
+  "deleteAccount": {
+    "label": "Delete my account",
+    "confirmTitle": "Delete account?",
+    "confirmMessage": "This action is irreversible. All your tasks, accountability partners and data will be permanently deleted.",
+    "confirm": "Delete permanently",
+    "cancel": "Cancel"
+  },
+  "footer": {
+    "copyright": "© 2024 Snowflake Group. All rights reserved."
+  },
+  "privacyPage": {
+    "header": { "title": "Privacy" },
+    "intro": "How Actio handles your data — last updated: June 26, 2026.",
+    "sections": {
+      "storage": {
+        "title": "Data storage",
+        "body": "Your tasks, accountability partners and preferences are currently stored locally on your device (and, for your account, encrypted). No cloud sync is active yet — uninstalling the app or switching devices will erase this data."
+      },
+      "collected": {
+        "title": "Data we collect",
+        "body": "The content of your tasks and accountability partners; the contact you explicitly choose via the contact picker (we never access your full address book); your location only if you enable a location-based reminder; your profile picture if you choose one. None of this is collected unless you use the corresponding feature."
+      },
+      "permissions": {
+        "title": "System access",
+        "body": "Some features (alarms, importing contacts, location, profile picture...) require system permissions, which you can review and manage at any time.",
+        "cta": "Manage permissions"
+      },
+      "payments": {
+        "title": "Payments (Pro subscription)",
+        "body": "If you subscribe to ACTIO Pro, payment is processed by our provider Moneroo. We never store your card details — they are handled directly by Moneroo under its own privacy terms."
+      },
+      "sharing": {
+        "title": "Sharing with third parties",
+        "body": "Actio does not sell or share your data with third parties for advertising purposes. The only current exception is payment processing via Moneroo (see above), strictly necessary to provide the service."
+      },
+      "future": {
+        "title": "Planned changes",
+        "body": "We plan to add cloud sync, notifications sent to your accountability partners, and AI-assisted task creation. These features will involve processing your data on our servers (no longer only on your device). This policy will be updated before each of these features is activated, and your consent will be requested if needed."
+      },
+      "rights": {
+        "title": "Your rights",
+        "body": "You can request access, correction, deletion, or export of your data at any time by contacting us. As long as your data stays only on your device, you keep full control via Settings > Delete my account."
+      },
+      "deletion": {
+        "title": "Deleting your data",
+        "body": "You can delete your account and all your data at any time from Settings > Delete my account."
+      },
+      "contact": {
+        "title": "Contact us",
+        "body": "For any question about this policy or your data, email us at supportactio@gmail.com."
+      }
+    }
+  },
+  "helpPage": {
+    "header": { "title": "Help Center" },
+    "intro": "Frequently asked questions about Actio.",
+    "faq": {
+      "garant":        { "q": "What's an Accountability Partner?", "a": "An Accountability Partner is someone you choose to be alerted if you haven't confirmed completing a task by its deadline." },
+      "alarm":         { "q": "How do alarms work?", "a": "When a task is due, Actio triggers a sound alarm. You can snooze it or confirm the task is done." },
+      "delay":         { "q": "What does the alert delay mean?", "a": "It's the time left after a task's deadline before your accountability partner is notified, if you haven't confirmed anything in the meantime." },
+      "notifications": { "q": "I'm not receiving notifications", "a": "Check that the Notifications permission is enabled in Settings > Permissions, and that your phone isn't in Do Not Disturb mode." },
+      "language":      { "q": "How do I change the app's language?", "a": "Settings > Language & Region, then pick your language — the change applies immediately." }
+    },
+    "contactFooter": "Can't find the answer to your question?"
+  },
+  "permissionsPage": {
+    "header": {
+      "title": "Permissions"
+    },
+    "intro": "Manage the system access used by Actio. You can change these at any time from your phone's settings.",
+    "status": {
+      "granted": "Allowed",
+      "denied": "Denied",
+      "undetermined": "Not asked yet"
+    },
+    "items": {
+      "notifications": {
+        "title": "Notifications",
+        "subtitle": "Alarms and task reminders"
+      },
+      "contacts": {
+        "title": "Contacts",
+        "subtitle": "Import an accountability partner from your contacts"
+      },
+      "calendar": {
+        "title": "Calendar",
+        "subtitle": "Sync your scheduled tasks"
+      },
+      "location": {
+        "title": "Location",
+        "subtitle": "Location-based reminders"
+      },
+      "photos": {
+        "title": "Photos",
+        "subtitle": "Choose a profile picture"
+      },
+      "battery": {
+        "title": "Battery optimization",
+        "subtitle": "Prevents Android from blocking your alarms in the background"
+      }
+    }
+  },
+  "languagePage": {
+    "header": {
+      "title": "Language & Region"
+    },
+    "intro": "Changes apply immediately, no confirmation needed.",
+    "language": {
+      "title": "App language",
+      "subtitle": "Changes all text in the app, as well as the date format."
+    },
+    "region": {
+      "title": "Time format",
+      "subtitle": "Used for displaying times throughout the app.",
+      "24h": "24-hour",
+      "12h": "12-hour (AM/PM)"
+    }
+  }
+}

@@ -1,0 +1,182 @@
+{
+  "header": {
+    "title": "Paramètres"
+  },
+  "sections": {
+    "account": {
+      "title": "Compte",
+      "profile": {
+        "fallbackName": "Utilisateur"
+      },
+      "subscription": {
+        "label": "Abonnement",
+        "sublabelPro": "99,00€/an · Renouvellement le 12/05",
+        "sublabelFree": "Passer à ACTIO Pro"
+      }
+    },
+    "app": {
+      "title": "Application",
+      "notifications": {
+        "label": "Notifications & Alarmes",
+        "subtitle": "Rappels, alertes, sons"
+      },
+      "garants": {
+        "label": "Garants",
+        "subtitle_one": "{{count}} actif",
+        "subtitle_other": "{{count}} actifs"
+      },
+      "language": {
+        "label": "Langue & Région",
+        "subtitle": "Français (France)"
+      }
+    },
+    "advanced": {
+      "title": "Avancé",
+      "permissions": {
+        "label": "Permissions",
+        "subtitle": "Gérer les accès système"
+      },
+      "privacy": {
+        "label": "Confidentialité",
+        "subtitle": "Sécurité et chiffrement"
+      }
+    },
+    "support": {
+      "title": "Support",
+      "help": {
+        "label": "Centre d'aide"
+      },
+      "contact": {
+        "label": "Nous contacter"
+      },
+      "share": {
+        "label": "Partager ACTIO"
+      }
+    }
+  },
+  "logout": {
+    "label": "Déconnexion",
+    "confirmTitle": "Se déconnecter ?",
+    "confirmMessage": "Vous devrez vous reconnecter pour accéder à vos données.",
+    "confirm": "Se déconnecter",
+    "cancel": "Annuler"
+  },
+  "deleteAccount": {
+    "label": "Supprimer mon compte",
+    "confirmTitle": "Supprimer le compte ?",
+    "confirmMessage": "Cette action est irréversible. Toutes vos tâches, garants et données seront définitivement supprimés.",
+    "confirm": "Supprimer définitivement",
+    "cancel": "Annuler"
+  },
+  "footer": {
+    "copyright": "© 2024 Snowflake Group. Tous droits réservés."
+  },
+  "privacyPage": {
+    "header": { "title": "Confidentialité" },
+    "intro": "Comment Actio traite vos données — dernière mise à jour : 26 juin 2026.",
+    "sections": {
+      "storage": {
+        "title": "Stockage des données",
+        "body": "Vos tâches, garants et préférences sont actuellement stockés localement sur votre appareil (et, pour votre compte, de façon chiffrée). Aucune synchronisation cloud n'est encore active — désinstaller l'app ou changer d'appareil effacera ces données."
+      },
+      "collected": {
+        "title": "Données que nous collectons",
+        "body": "Le contenu de vos tâches et de vos garants ; le contact que vous choisissez explicitement via le sélecteur de contacts (nous n'accédons jamais à votre répertoire complet) ; votre position uniquement si vous activez un rappel par lieu ; votre photo de profil si vous en choisissez une. Rien de tout cela n'est collecté si vous n'utilisez pas la fonctionnalité correspondante."
+      },
+      "permissions": {
+        "title": "Accès système",
+        "body": "Certaines fonctionnalités (alarmes, import de contacts, localisation, photo de profil...) nécessitent des autorisations système, que vous pouvez consulter et gérer à tout moment.",
+        "cta": "Gérer les permissions"
+      },
+      "payments": {
+        "title": "Paiements (abonnement Pro)",
+        "body": "Si vous souscrivez à ACTIO Pro, le paiement est traité par notre prestataire Moneroo. Nous ne stockons jamais vos données de carte bancaire — elles sont gérées directement par Moneroo selon ses propres conditions de confidentialité."
+      },
+      "sharing": {
+        "title": "Partage avec des tiers",
+        "body": "Actio ne vend ni ne partage vos données avec des tiers à des fins publicitaires. La seule exception actuelle est le traitement des paiements via Moneroo (voir ci-dessus), strictement nécessaire à la fourniture du service."
+      },
+      "future": {
+        "title": "Évolutions prévues",
+        "body": "Nous prévoyons d'ajouter une synchronisation cloud, des notifications envoyées à vos Garants, et une assistance par IA pour la création de tâches. Ces fonctionnalités impliqueront un traitement de vos données sur nos serveurs (et non plus uniquement sur votre appareil). Cette politique sera mise à jour avant l'activation de chacune de ces fonctionnalités, et votre consentement sera demandé si nécessaire."
+      },
+      "rights": {
+        "title": "Vos droits",
+        "body": "Vous pouvez à tout moment demander l'accès, la rectification, la suppression ou l'export de vos données en nous contactant. Tant que vos données restent uniquement sur votre appareil, vous gardez un contrôle total via Réglages > Supprimer mon compte."
+      },
+      "deletion": {
+        "title": "Suppression de vos données",
+        "body": "Vous pouvez supprimer votre compte et toutes vos données à tout moment depuis Réglages > Supprimer mon compte."
+      },
+      "contact": {
+        "title": "Nous contacter",
+        "body": "Pour toute question sur cette politique ou vos données, écrivez-nous à supportactio@gmail.com."
+      }
+    }
+  },
+  "helpPage": {
+    "header": { "title": "Centre d'aide" },
+    "intro": "Questions fréquentes sur Actio.",
+    "faq": {
+      "garant":        { "q": "Qu'est-ce qu'un Garant ?", "a": "Un Garant est une personne que vous désignez pour être alertée si vous n'avez pas confirmé avoir accompli une tâche dans le délai prévu." },
+      "alarm":         { "q": "Comment fonctionnent les alarmes ?", "a": "Quand une tâche arrive à échéance, Actio déclenche une alarme sonore. Vous pouvez la reporter (snooze) ou confirmer que la tâche est faite." },
+      "delay":         { "q": "Que signifie le délai avant alerte d'un Garant ?", "a": "C'est le temps laissé après l'échéance d'une tâche avant que votre Garant soit notifié, si vous n'avez rien confirmé entre-temps." },
+      "notifications": { "q": "Je ne reçois pas les notifications", "a": "Vérifiez que l'autorisation Notifications est activée dans Réglages > Permissions, et que votre téléphone n'est pas en mode Ne pas déranger." },
+      "language":      { "q": "Comment changer la langue de l'app ?", "a": "Réglages > Langue & Région, puis choisissez votre langue — le changement est immédiat." }
+    },
+    "contactFooter": "Vous ne trouvez pas la réponse à votre question ?"
+  },
+  "permissionsPage": {
+    "header": {
+      "title": "Permissions"
+    },
+    "intro": "Gère les accès système utilisés par Actio. Tu peux les modifier à tout moment depuis les réglages de ton téléphone.",
+    "status": {
+      "granted": "Autorisé",
+      "denied": "Refusé",
+      "undetermined": "Non demandé"
+    },
+    "items": {
+      "notifications": {
+        "title": "Notifications",
+        "subtitle": "Alarmes et rappels de tâches"
+      },
+      "contacts": {
+        "title": "Contacts",
+        "subtitle": "Importer un garant depuis vos contacts"
+      },
+      "calendar": {
+        "title": "Calendrier",
+        "subtitle": "Synchroniser vos tâches planifiées"
+      },
+      "location": {
+        "title": "Localisation",
+        "subtitle": "Rappels basés sur votre position"
+      },
+      "photos": {
+        "title": "Photos",
+        "subtitle": "Choisir une photo de profil"
+      },
+      "battery": {
+        "title": "Optimisation de la batterie",
+        "subtitle": "Empêche Android de bloquer vos alarmes en arrière-plan"
+      }
+    }
+  },
+  "languagePage": {
+    "header": {
+      "title": "Langue & Région"
+    },
+    "intro": "Les changements sont appliqués immédiatement, sans confirmation.",
+    "language": {
+      "title": "Langue de l'application",
+      "subtitle": "Change la langue de tous les textes, ainsi que le format des dates."
+    },
+    "region": {
+      "title": "Format de l'heure",
+      "subtitle": "Utilisé pour l'affichage des heures dans toute l'app.",
+      "24h": "24 heures",
+      "12h": "12 heures (AM/PM)"
+    }
+  }
+}

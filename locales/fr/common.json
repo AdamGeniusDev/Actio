@@ -1,0 +1,83 @@
+{
+  "actions": {
+    "continue": "Continuer",
+    "back": "Retour",
+    "cancel": "Annuler",
+    "save": "Enregistrer",
+    "delete": "Supprimer",
+    "confirm": "Confirmer",
+    "edit": "Modifier",
+    "add": "Ajouter",
+    "remove": "Retirer",
+    "skip": "Passer",
+    "done": "Terminer",
+    "close": "Fermer",
+    "search": "Rechercher",
+    "openSettings": "Ouvrir les réglages",
+    "tryAgain": "Réessayer",
+    "later": "Plus tard",
+    "seeAll": "Voir tout"
+  },
+
+  "status": {
+    "loading": "Chargement...",
+    "saving": "Enregistrement...",
+    "deleting": "Suppression...",
+    "success": "Succès",
+    "error": "Erreur"
+  },
+
+  "error": {
+    "generic": "Une erreur est survenue",
+    "network": "Pas de connexion internet",
+    "timeout": "La requête a expiré",
+    "notFound": "Introuvable",
+    "unauthorized": "Session expirée, reconnecte-toi"
+  },
+
+  "time": {
+    "now": "Maintenant",
+    "today": "Aujourd'hui",
+    "tomorrow": "Demain",
+    "yesterday": "Hier",
+    "minutes": "{{count}} min",
+    "hours": "{{count}}h",
+    "at": "à {{time}}"
+  },
+
+  "badges": {
+    "essential": "ESSENTIEL",
+    "pro": "PRO",
+    "new": "NOUVEAU",
+    "beta": "BÊTA"
+  },
+
+  "navigation": {
+    "today": "Auj.",
+    "home": "Accueil",
+    "week": "Semaine",
+    "stats": "Stats",
+    "settings": "Réglagles"
+  },
+
+  "auth": {
+    "login": "Se connecter",
+    "logout": "Se déconnecter",
+    "register": "Créer un compte",
+    "alreadyAccount": "J'ai déjà un compte",
+    "noAccount": "Pas encore de compte ?"
+  },
+
+  "progress": {
+    "stepOf": "Étape {{current}} sur {{total}}"
+  },
+
+  "privacy": {
+    "noDataShared": "Aucune donnée n'est transmise à des tiers."
+  },
+
+  "alert": {
+    "areYouSure": "Tu es sûr ?",
+    "actionIrreversible": "Cette action est irréversible."
+  }
+}

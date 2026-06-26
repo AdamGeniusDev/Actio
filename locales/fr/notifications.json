@@ -1,0 +1,74 @@
+{
+  "header": {
+    "title": "Notifications & Alarmes"
+  },
+  "badges": {
+    "immediate": "Immédiat"
+  },
+  "sections": {
+    "reminders": {
+      "title": "Rappels",
+      "multiple": {
+        "label": "Rappels multiples",
+        "sublabelPro": "3 rappels : 15 min avant, à l'heure, 15 min après",
+        "sublabelLocked": "Disponible avec Pro — 3 rappels par tâche"
+      },
+      "silence": {
+        "label": "Plage de silence",
+        "sublabel": "22:00 → 07:00"
+      },
+      "sound": {
+        "label": "Son d'alarme",
+        "options": {
+          "classic": "Classique",
+          "soft": "Doux",
+          "digital": "Numérique"
+        },
+        "add": "Ajouter un son..."
+      }
+    },
+    "system": {
+      "title": "Notifications Système",
+      "lateTasks": {
+        "label": "Tâches en retard"
+      },
+      "aiTips": {
+        "label": "Conseil IA"
+      },
+      "weeklyReport": {
+        "label": "Rapport hebdo",
+        "sublabel": "Résumé envoyé chaque lundi matin"
+      },
+      "streaks": {
+        "label": "Streaks",
+        "sublabel": "Rappel pour maintenir votre série"
+      },
+      "garant": {
+        "label": "Alertes Garant"
+      }
+    },
+    "advanced": {
+      "title": "Avancé",
+      "vibration": {
+        "label": "Vibration",
+        "min": "Doux",
+        "max": "Intense"
+      },
+      "persistent": {
+        "label": "Alarme persistante",
+        "sublabelPro": "L'alarme sonne jusqu'à confirmation manuelle",
+        "sublabelLocked": "Disponible avec Pro"
+      },
+      "lockScreen": {
+        "label": "Remplacer l'écran de verrouillage",
+        "sublabelPro": "L'alarme s'affiche par-dessus l'écran verrouillé",
+        "sublabelLocked": "Disponible avec Pro"
+      },
+      "directAction": {
+        "label": "Action directe sur notification",
+        "sublabel": "Terminer ou reporter sans ouvrir l'app"
+      }
+    }
+  },
+  "testAlarm": "Tester une alarme"
+}

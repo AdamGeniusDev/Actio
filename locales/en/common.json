@@ -1,0 +1,84 @@
+{
+  "actions": {
+    "continue": "Continue",
+    "back": "Back",
+    "cancel": "Cancel",
+    "save": "Save",
+    "delete": "Delete",
+    "confirm": "Confirm",
+    "edit": "Edit",
+    "add": "Add",
+    "remove": "Remove",
+    "skip": "Skip",
+    "done": "Done",
+    "close": "Close",
+    "search": "Search",
+    "openSettings": "Open settings",
+    "tryAgain": "Try again",
+    "later": "Later",
+    "seeAll": "See all"
+  },
+
+  "status": {
+    "loading": "Loading...",
+    "saving": "Saving...",
+    "deleting": "Deleting...",
+    "success": "Success",
+    "error": "Error"
+  },
+
+  "error": {
+    "generic": "Something went wrong",
+    "network": "No internet connection",
+    "timeout": "Request timed out",
+    "notFound": "Not found",
+    "unauthorized": "Session expired, please log in again"
+  },
+
+  "time": {
+    "now": "Now",
+    "today": "Today",
+    "tomorrow": "Tomorrow",
+    "yesterday": "Yesterday",
+    "minutes": "{{count}} min",
+    "hours": "{{count}}h",
+    "at": "at {{time}}"
+  },
+
+  "badges": {
+    "essential": "ESSENTIAL",
+    "pro": "PRO",
+    "new": "NEW",
+    "beta": "BETA"
+  },
+
+  "navigation": {
+    "today": "Today",
+    "home": "Home",
+    "week": "Week",
+    "stats": "Stats",
+    "settings": "Settings"
+  },
+
+
+  "auth": {
+    "login": "Log in",
+    "logout": "Log out",
+    "register": "Create an account",
+    "alreadyAccount": "I already have an account",
+    "noAccount": "Don't have an account yet?"
+  },
+
+  "progress": {
+    "stepOf": "Step {{current}} of {{total}}"
+  },
+
+  "privacy": {
+    "noDataShared": "No data is shared with third parties."
+  },
+
+  "alert": {
+    "areYouSure": "Are you sure?",
+    "actionIrreversible": "This action cannot be undone."
+  }
+}

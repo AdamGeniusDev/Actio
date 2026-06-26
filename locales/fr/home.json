@@ -1,0 +1,30 @@
+{
+  "greeting": "Bonjour, {{name}} 👋",
+  "streak": "Streak : {{count}}j",
+  "your_day": "Votre journée",
+  "completed": "{{count}} complétés",
+  "in_progress": "{{count}} en cours",
+  "remaining": "{{count}} restants",
+  "progress_label": "Progression",
+  "next_label": "À SUIVRE",
+  "imminent_label": "IMMINENT",
+  "view_details": "Voir les détails",
+  "my_tasks": "📋 Mes tâches",
+  "see_all": "Voir tout",
+  "empty_title": "Journée libre ! 🎉",
+  "empty_subtitle": "Aucune tâche pour aujourd'hui. Profitez-en pour vous ressourcer ou commencez à anticiper demain.",
+  "add_task": "Ajouter une tâche",
+  "see_week": "Voir la semaine",
+  "search": {
+    "placeholder": "Rechercher une tâche...",
+    "cancel": "Annuler",
+    "empty": "Aucun résultat"
+  },
+  "notifications": {
+    "title": "Notifications",
+    "overdue": "En retard : {{title}}",
+    "dueSoon": "À venir : {{title}}",
+    "garantInvite": "Invitation en attente : {{title}}",
+    "empty": "Aucune notification pour l'instant"
+  }
+}

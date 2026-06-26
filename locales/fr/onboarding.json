@@ -1,0 +1,116 @@
+{
+  "welcome": {
+    "tagline": "YOUR PERSONAL ACTION OS",
+    "headline": "Accomplissez.\nPas juste planifiez.",
+    "description": "ACTIO agit avec vous au moment où ça compte. Rappels intelligents. Actions directes. Jamais un rappel ignoré.",
+    "cta": "Commencer →",
+    "login": "J'ai déjà un compte",
+    "languages": {
+      "fr": "Français",
+      "en": "English",
+      "ar": "العربية"
+    }
+  },
+
+  "preview": {
+    "greeting": "Bonjour, Alex 👋",
+    "date": "📅 MARDI 3 JUIN",
+    "yourDay": "Votre journée",
+    "completed": "{{count}} complétés",
+    "inProgress": "{{count}} en cours",
+    "now": "MAINTENANT",
+    "reminderMeta": "Rappel : 09:45 · Travail",
+    "callAction": "📞 Appeler",
+    "postponeAction": "⏰ Reporter",
+    "myTasks": "📋 Mes tâches",
+    "seeAll": "Voir tout",
+    "task1Sub": "Travail · 09:45",
+    "task2Sub": "Terminé à 08:30"
+  },
+
+  "permissions": {
+    "title": "ACTIO a besoin de quelques autorisations.",
+    "description": "ACTIO a besoin de ces autorisations pour fonctionner parfaitement. Toutes sont optionnelles, mais accorde au moins la batterie et les notifications — elles garantissent que tes alarmes sonnent toujours.",
+    "whyNeeded": "Pourquoi ACTIO en a besoin",
+    "noDataShared": "Aucune donnée n'est transmise à des tiers.",
+    "items": {
+      "battery": {
+        "title": "Batterie",
+        "subtitle": "Requis pour des alarmes fiables",
+        "description": "Certains téléphones Android coupent les apps en arrière-plan pour économiser la batterie. Sans cette exception, tes alarmes peuvent ne pas sonner après un long moment."
+      },
+      "notifications": {
+        "title": "Notifications",
+        "subtitle": "Reçois tes rappels à l'heure",
+        "description": "Sans les notifications, tes rappels et alarmes ne pourront pas t'atteindre. C'est le canal principal par lequel ACTIO communique avec toi."
+      },
+      "contacts": {
+        "title": "Contacts",
+        "subtitle": "Ajoute tes garants en un tap",
+        "description": "Retrouve facilement tes garants existants dans tes contacts pour les ajouter sans ressaisir leurs informations."
+      },
+      "calendar": {
+        "title": "Calendrier",
+        "subtitle": "Synchronise tes tâches",
+        "description": "Affiche tes tâches ACTIO directement dans ton calendrier habituel pour garder une vue d'ensemble de ta semaine."
+      },
+      "location": {
+        "title": "Localisation",
+        "subtitle": "Déclenche tes alarmes à l'arrivée",
+        "description": "Configure des alarmes qui se déclenchent automatiquement quand tu arrives quelque part. Exemple : « Quand j'arrive au marché, me rappeler d'appeler le menuisier. »"
+      }
+    },
+    "alerts": {
+      "disable": {
+        "title": "Désactiver cette permission",
+        "message": "Pour la désactiver, rends-toi dans les réglages de ton téléphone."
+      },
+      "denied": {
+        "title": "Permission refusée",
+        "message": "Tu pourras l'activer plus tard depuis les réglages de ton téléphone."
+      },
+      "blocked": {
+        "title": "Permission bloquée",
+        "message": "Tu as refusé cette permission plusieurs fois. Pour l'activer, tu dois passer par les réglages de ton téléphone."
+      }
+    }
+  },
+
+  "garant": {
+    "title": "Votre filet de sécurité humain.",
+    "description": "Quand vous oubliez un rappel important, votre garant reçoit une alerte automatique via ACTIO.",
+    "chooseCta": "Choisir un Garant",
+    "fields": {
+      "firstName": {
+        "label": "PRÉNOM DU GARANT",
+        "placeholder": "e.g. Thomas"
+      },
+      "relation": {
+        "label": "RELATION",
+        "options": {
+          "family": "Famille",
+          "friend": "Ami",
+          "colleague": "Collègue"
+        }
+      },
+      "delay": {
+        "label": "DÉLAI D'ALERTE",
+        "options": {
+          "5min": "5 min",
+          "10min": "10 min",
+          "15min": "15 min",
+          "30min": "30 min",
+          "1h": "1h"
+        }
+      },
+      "autoMessage": {
+        "label": "MESSAGE AUTOMATIQUE",
+        "salutationFormal": "Bonjour {{name}}",
+        "salutationInformal": "Salut {{name}}",
+        "preview": "{{salutation}}, {{userName}} n'a pas validé son rappel '{{reminder}}' depuis {{delay}}. Merci de vérifier si tout va bien."
+      }
+    },
+    "cta": "Terminer et lancer ACTIO 🚀",
+    "skip": "Passer cette étape "
+  }
+}

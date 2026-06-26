@@ -1,0 +1,116 @@
+{
+  "welcome": {
+    "tagline": "YOUR PERSONAL ACTION OS",
+    "headline": "Accomplish.\nNot just plan.",
+    "description": "ACTIO acts with you when it matters most. Smart reminders. Direct actions. Never an ignored reminder.",
+    "cta": "Get started →",
+    "login": "I already have an account",
+    "languages": {
+      "fr": "Français",
+      "en": "English",
+      "ar": "العربية"
+    }
+  },
+
+  "preview": {
+    "greeting": "Hello, Alex 👋",
+    "date": "📅 TUESDAY JUNE 3",
+    "yourDay": "Your day",
+    "completed": "{{count}} completed",
+    "inProgress": "{{count}} in progress",
+    "now": "NOW",
+    "reminderMeta": "Reminder: 09:45 · Work",
+    "callAction": "📞 Call",
+    "postponeAction": "⏰ Postpone",
+    "myTasks": "📋 My tasks",
+    "seeAll": "See all",
+    "task1Sub": "Work · 09:45",
+    "task2Sub": "Done at 08:30"
+  },
+
+  "permissions": {
+    "title": "ACTIO needs a few permissions.",
+    "description": "ACTIO needs these permissions to work at its best. They're all optional, but make sure to grant at least battery and notifications — they ensure your alarms always ring.",
+    "whyNeeded": "Why ACTIO needs this",
+    "noDataShared": "No data is shared with third parties.",
+    "items": {
+      "battery": {
+        "title": "Battery",
+        "subtitle": "Required for reliable alarms",
+        "description": "Some Android phones cut background apps to save battery. Without this exception, your alarms may not ring after the phone has been idle for a while."
+      },
+      "notifications": {
+        "title": "Notifications",
+        "subtitle": "Receive your reminders on time",
+        "description": "Without notifications, your reminders and alarms won't be able to reach you. It's the main channel ACTIO uses to communicate with you."
+      },
+      "contacts": {
+        "title": "Contacts",
+        "subtitle": "Add your guarantors in one tap",
+        "description": "Easily find your existing guarantors in your contacts to add them without re-entering their information."
+      },
+      "calendar": {
+        "title": "Calendar",
+        "subtitle": "Sync your tasks",
+        "description": "Display your ACTIO tasks directly in your regular calendar to keep an overview of your week."
+      },
+      "location": {
+        "title": "Location",
+        "subtitle": "Trigger alarms when you arrive",
+        "description": "Set location-based alarms that fire automatically when you arrive somewhere. Example: \"When I get to the hardware store, remind me to call the contractor.\""
+      }
+    },
+    "alerts": {
+      "disable": {
+        "title": "Disable this permission",
+        "message": "To disable it, go to your phone's settings."
+      },
+      "denied": {
+        "title": "Permission denied",
+        "message": "You can enable it later from your phone's settings."
+      },
+      "blocked": {
+        "title": "Permission blocked",
+        "message": "You've denied this permission multiple times. To enable it, you need to go to your phone's settings."
+      }
+    }
+  },
+
+  "garant": {
+    "title": "Your human safety net.",
+    "description": "When you miss an important reminder, your Guarantor automatically receives an alert via ACTIO.",
+    "chooseCta": "Choose a Guarantor",
+    "fields": {
+      "firstName": {
+        "label": "GUARANTOR'S FIRST NAME",
+        "placeholder": "e.g. Thomas"
+      },
+      "relation": {
+        "label": "RELATIONSHIP",
+        "options": {
+          "family": "Family",
+          "friend": "Friend",
+          "colleague": "Colleague"
+        }
+      },
+      "delay": {
+        "label": "ALERT DELAY",
+        "options": {
+          "5min": "5 min",
+          "10min": "10 min",
+          "15min": "15 min",
+          "30min": "30 min",
+          "1h": "1h"
+        }
+      },
+      "autoMessage": {
+        "label": "AUTOMATIC MESSAGE",
+        "salutationFormal": "Hello {{name}}",
+        "salutationInformal": "Hey {{name}}",
+        "preview": "{{salutation}}, {{userName}} hasn't validated the reminder '{{reminder}}' for {{delay}}. Please check if everything is okay."
+      }
+    },
+    "cta": "Finish and launch ACTIO 🚀",
+    "skip": "Skip this step "
+  }
+}

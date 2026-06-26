@@ -1,0 +1,111 @@
+{
+  "hero": {
+    "badge": "Premium Experience",
+    "title": "Allez Plus Loin",
+    "subtitle": "Débloquez tout le potentiel de votre productivité avec ACTIO Pro."
+  },
+  "features": {
+    "garants": {
+      "badge": "Infinity First",
+      "title": "Garants Illimités",
+      "description": "Ajoutez autant de garants que vous voulez. Escalade en cascade configurable (SMS, WhatsApp, email) si une tâche critique est ratée."
+    },
+    "ai": {
+      "badge": "Smart",
+      "title": "AI Scheduling",
+      "description": "L'IA analyse vos patterns de productivité et vous propose le meilleur créneau pour chaque tâche."
+    },
+    "voice": {
+      "badge": "Nouveau",
+      "title": "Voice Task",
+      "description": "Dites simplement ce que vous devez faire. L'IA extrait le titre, l'heure et la priorité et crée la tâche."
+    },
+    "analytics": {
+      "title": "Analytics Avancés",
+      "description": "Tendances long terme, taux de complétion par garant, heures de peak et streaks de productivité."
+    },
+    "alarm": {
+      "title": "Alarme Intelligente",
+      "description": "Son custom inclus. Pro ajoute : volume progressif, alarme par localisation et action contextuelle depuis l'écran d'alarme."
+    }
+  },
+  "cta": {
+    "upgrade": "Passer à Pro",
+    "trial": "Essai gratuit 7 jours · Annulez à tout moment"
+  },
+  "pricing": {
+    "hero": {
+      "title": "Choisissez votre plan",
+      "subtitle": "Commencez gratuitement. Montez en puissance quand vous êtes prêt."
+    },
+    "toggle": {
+      "monthly": "MENSUEL",
+      "yearly": "ANNUEL"
+    },
+    "base": {
+      "label": "ACTIO BASE",
+      "period": "/toujours",
+      "cta": "Plan Actuel",
+      "f1": "5 tâches actives",
+      "f2": "1 garant · escalade push basique",
+      "f3": "Rappel à l'heure exacte",
+      "f4": "Son d'alarme personnalisé",
+      "f5": "Stats du jour uniquement"
+    },
+    "pro": {
+      "label": "ACTIO PRO",
+      "badge": "MEILLEUR CHOIX",
+      "cta": "Essayer 7 jours gratuits",
+      "monthlyHint": "Soit",
+      "f1": "Tâches illimitées",
+      "f2": "Garants illimités · escalade en cascade",
+      "f3": "Rappels progressifs (avant + après échéance)",
+      "f4": "Escalade configurable (SMS, WhatsApp, email)",
+      "f5": "AI Scheduling",
+      "f6": "Voice Task — Tâche par audio IA",
+      "f7": "Alarme avancée & par localisation",
+      "f8": "Analytics long terme"
+    },
+    "quote": "\"Dominez vos objectifs\nsans limites.\""
+  },
+  "checkout": {
+    "header": "Finaliser votre commande",
+    "plan": {
+      "yearly": "Pro Annuel",
+      "monthly": "Pro Mensuel",
+      "desc": "Accès illimité aux outils de performance"
+    },
+    "summary": {
+      "subtotal": "Sous-total",
+      "tax": "TVA",
+      "total": "Total",
+      "secure": "Secure Checkout"
+    },
+    "methods": {
+      "label": "Moyen de paiement",
+      "card": "Carte",
+      "mobileMoney": "Mobile Money"
+    },
+    "card": {
+      "number": "Numéro de carte",
+      "expiry": "Expiration"
+    },
+    "mobileMoney": {
+      "operator": "Choisissez votre opérateur",
+      "phone": "Numéro de téléphone",
+      "note": "Vous recevrez une demande de confirmation sur votre téléphone. Le paiement est sécurisé via Moneroo."
+    },
+    "paypal": {
+      "redirect": "Vous serez redirigé vers PayPal pour finaliser le paiement."
+    },
+    "applePay": {
+      "prompt": "Appuyez sur le bouton Apple Pay pour confirmer."
+    },
+    "trust": {
+      "ssl": "SSL Certifié",
+      "encrypted": "Paiement Chiffré",
+      "guarantee": "30 jours satisfait"
+    },
+    "cta": "Confirmer et Payer"
+  }
+}

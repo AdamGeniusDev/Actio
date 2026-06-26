@@ -1,0 +1,68 @@
+{
+  "header": {
+    "title": "Ma productivité"
+  },
+  "period": {
+    "7j": "7J",
+    "30j": "30J",
+    "tout": "Tout"
+  },
+  "states": {
+    "error": "Impossible de charger les statistiques pour le moment."
+  },
+  "weeklyGoal": {
+    "sectionTitle": "OBJECTIF DE LA SEMAINE"
+  },
+  "activity": {
+    "sectionTitle": "ACTIVITÉ",
+    "subtitle": "Taux de complétion quotidien — appuie sur un jour pour le détail",
+    "subtitleWeekly": "Moyenne hebdomadaire sur la période sélectionnée",
+    "thisWeek": "Cette sem.",
+    "weekShort": "Sem. -{{n}}"
+  },
+  "breakdown": {
+    "sectionTitle": "RÉPARTITION",
+    "categories": {
+      "work": "Work",
+      "personal": "Perso",
+      "health": "Santé",
+      "finance": "Finance"
+    }
+  },
+  "recent": {
+    "sectionTitle": "RÉCENT",
+    "table": {
+      "date": "DATE",
+      "count": "COUNT",
+      "completion": "COMPLÉTION"
+    },
+    "tasksCount_one": "{{count}} tâche",
+    "tasksCount_other": "{{count}} tâches"
+  },
+  "streak": {
+    "label": "SÉRIE ACTUELLE",
+    "days_one": "jour",
+    "days_other": "jours",
+    "averageScore": "Score moyen",
+    "averageFocus": "Focus moyen",
+    "message": {
+      "zero": "Termine une tâche aujourd'hui pour démarrer ta série",
+      "low": "Continue, ta série démarre bien",
+      "mid_one": "Encore {{count}} jour pour atteindre une semaine pleine",
+      "mid_other": "Encore {{count}} jours pour atteindre une semaine pleine",
+      "good": "Belle régularité, ne lâche rien",
+      "excellent": "Série exceptionnelle, tu es sur ta lancée"
+    }
+  },
+  "day": {
+    "tasksLabel": "{{completed}} sur {{total}} tâches",
+    "stats": {
+      "saved": "Économisé",
+      "streak": "Série",
+      "managed": "Gérées"
+    },
+    "insightsTitle": "INSIGHTS IA",
+    "completedTitle": "TÂCHES COMPLÉTÉES",
+    "empty": "Aucune tâche complétée ce jour-là."
+  }
+}

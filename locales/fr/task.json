@@ -1,0 +1,118 @@
+{
+  "call_now": "Appeler maintenant",
+  "reminder": "Rappel : {{time}} · {{category}}",
+  "snooze": {
+    "title": "Reporter de combien ?",
+    "currentTask": "Tâche en cours",
+    "tomorrow": "Demain",
+    "preciseTime": "Heure précise",
+    "confirm": "Confirmer le report",
+    "garantWarning": "Votre Garant {{name}} sera notifié de ce report.",
+    "options": {
+      "brief":    "Bref",
+      "standard": "Standard",
+      "long":     "Long",
+      "focus":    "Focus",
+      "late":     "Tardif",
+      "morning":  "Matin"
+    }
+  },
+  "alarm": {
+    "done": "C'est fait !",
+    "ignore": "Ignorer",
+    "swipeHint": "Balayer pour ignorer"
+  },
+  "priorities": {
+    "low": "Faible",
+    "medium": "Moyenne",
+    "high": "Élevée",
+    "critical": "Urgent"
+  },
+  "create": {
+    "title": "Nouvelle tâche",
+    "titlePlaceholder": "Ex. Appeler le client pour le brief",
+    "iconType": "Type d'action",
+    "callConfig": "Numéro à appeler",
+    "callNumberPlaceholder": "Ex. +33 6 12 34 56 78",
+    "pickContact": "Choisir un contact",
+    "callLabelWithName": "Appeler {{name}}",
+    "alertMode": "Mode d'alerte",
+    "alertModeTime": "Heure précise",
+    "alertModeLocation": "Lieu",
+    "inMinutes": "+{{count}} min",
+    "inHours": "+{{count}}h",
+    "today": "Aujourd'hui",
+    "date": "Date",
+    "time": "Heure",
+    "category": "Catégorie",
+    "priority": "Priorité",
+    "garantToggle": "Garant",
+    "garantSubtitle": "Validation requise — alerte si non confirmée",
+    "noGarants": "Aucun garant actif — ajoutez-en un dans Réglages.",
+    "locationSubtitle": "L'alerte se déclenche à votre arrivée, pas à une heure précise",
+    "locationProNote": "Disponible avec Pro — alerte déclenchée par votre arrivée à un lieu plutôt qu'à une heure fixe.",
+    "useCurrentLocation": "Utiliser ma position actuelle",
+    "locating": "Localisation en cours...",
+    "locationUnknown": "Position actuelle",
+    "submit": "Créer la tâche",
+    "cancel": "Annuler"
+  },
+  "edit": {
+    "title": "Modifier la tâche",
+    "taskName": "Nom de la tâche",
+    "save": "Enregistrer les modifications",
+    "delete": "Supprimer cette tâche",
+    "deleteConfirmTitle": "Supprimer cette tâche ?",
+    "deleteConfirmMessage": "Cette action est irréversible."
+  },
+  "detail": {
+    "notFound": "Tâche introuvable",
+    "edit": "Modifier",
+    "directAction": "Action directe",
+    "garant": "Garant",
+    "alertAfter": "Alerte après {{minutes}} min",
+    "description": "Description",
+    "history": "Historique",
+    "historyCreated": "Action créée",
+    "historyGarantNotified": "Garant notifié",
+    "historyStatus": "Statut : {{status}}",
+    "status": {
+      "pending": "À faire",
+      "inProgress": "En cours",
+      "completed": "Terminée",
+      "snoozed": "Reportée",
+      "failed": "Manquée"
+    }
+  },
+  "ai": {
+    "header": { "title": "Créer avec l'IA" },
+    "proGate": {
+      "title": "Fonctionnalité Pro",
+      "subtitle": "Décrivez votre tâche à voix haute ou par texte, l'IA s'occupe de l'organiser pour vous.",
+      "cta": "Découvrir Pro"
+    },
+    "greeting": "Bonjour ! Décrivez ce que vous devez faire, et je m'occupe de l'organiser pour vous.",
+    "tapToSpeak": "Appuyez pour parler",
+    "listening": "Je vous écoute...",
+    "micSampleResult": "Appeler l'imprimerie ONIP demain, c'est urgent",
+    "textPlaceholder": "Ou écrivez ici votre demande...",
+    "suggestionsLabel": "Suggestions",
+    "suggestions": {
+      "suggestion1": "Appeler l'imprimerie ONIP",
+      "suggestion2": "Rendez-vous dentiste demain",
+      "suggestion3": "Acheter du café"
+    },
+    "detectedLabel": "Résultat détecté",
+    "createCta": "Créer",
+    "modifyCta": "Modifier"
+  },
+  "iconTypes": {
+    "call": "Appel",
+    "message": "Message",
+    "document": "Document",
+    "payment": "Paiement",
+    "event": "Rendez-vous",
+    "checklist": "Tâche",
+    "goal": "Objectif"
+  }
+}

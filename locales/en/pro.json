@@ -1,0 +1,111 @@
+{
+  "hero": {
+    "badge": "Premium Experience",
+    "title": "Go Beyond Limits",
+    "subtitle": "Unlock the full potential of your productivity with ACTIO Pro."
+  },
+  "features": {
+    "garants": {
+      "badge": "Infinity First",
+      "title": "Unlimited Garants",
+      "description": "Add as many accountability partners as you need. Configurable cascade escalation via SMS, WhatsApp, or email if a critical task is missed."
+    },
+    "ai": {
+      "badge": "Smart",
+      "title": "AI Scheduling",
+      "description": "The AI learns your productivity patterns and suggests the best time slot for every task."
+    },
+    "voice": {
+      "badge": "New",
+      "title": "Voice Task",
+      "description": "Just say what needs to be done. The AI extracts the title, time, and priority and creates the task."
+    },
+    "analytics": {
+      "title": "Deep Analytics",
+      "description": "Long-term trends, completion rate per garant, peak hours, and productivity streaks."
+    },
+    "alarm": {
+      "title": "Smart Alarm",
+      "description": "Custom sound included. Pro adds: progressive volume, location-based triggers, and contextual action from the alarm screen."
+    }
+  },
+  "cta": {
+    "upgrade": "Upgrade to Pro",
+    "trial": "7-day free trial · Cancel anytime"
+  },
+  "pricing": {
+    "hero": {
+      "title": "Choose your plan",
+      "subtitle": "Start for free. Level up when you're ready."
+    },
+    "toggle": {
+      "monthly": "MONTHLY",
+      "yearly": "YEARLY"
+    },
+    "base": {
+      "label": "ACTIO BASE",
+      "period": "/forever",
+      "cta": "Current Plan",
+      "f1": "5 active tasks",
+      "f2": "1 garant · basic push escalation",
+      "f3": "On-time reminder",
+      "f4": "Custom alarm sound",
+      "f5": "Today's stats only"
+    },
+    "pro": {
+      "label": "ACTIO PRO",
+      "badge": "BEST VALUE",
+      "cta": "Start 7-day free trial",
+      "monthlyHint": "That's",
+      "f1": "Unlimited tasks",
+      "f2": "Unlimited garants · cascade escalation",
+      "f3": "Progressive reminders (before + after deadline)",
+      "f4": "Configurable escalation (SMS, WhatsApp, email)",
+      "f5": "AI Scheduling",
+      "f6": "Voice Task — AI audio to task",
+      "f7": "Advanced & location-based alarm",
+      "f8": "Long-term analytics"
+    },
+    "quote": "\"Dominate your goals\nwithout limits.\""
+  },
+  "checkout": {
+    "header": "Finalize your order",
+    "plan": {
+      "yearly": "Pro Annual",
+      "monthly": "Pro Monthly",
+      "desc": "Unlimited access to all performance tools"
+    },
+    "summary": {
+      "subtotal": "Subtotal",
+      "tax": "VAT",
+      "total": "Total",
+      "secure": "Secure Checkout"
+    },
+    "methods": {
+      "label": "Payment method",
+      "card": "Card",
+      "mobileMoney": "Mobile Money"
+    },
+    "card": {
+      "number": "Card number",
+      "expiry": "Expiration"
+    },
+    "mobileMoney": {
+      "operator": "Choose your operator",
+      "phone": "Phone number",
+      "note": "You will receive a confirmation request on your phone. Payment is secured via Moneroo."
+    },
+    "paypal": {
+      "redirect": "You will be redirected to PayPal to complete the payment."
+    },
+    "applePay": {
+      "prompt": "Tap the Apple Pay button to confirm."
+    },
+    "trust": {
+      "ssl": "SSL Certified",
+      "encrypted": "Encrypted Payment",
+      "guarantee": "30-day guarantee"
+    },
+    "cta": "Confirm & Pay"
+  }
+}

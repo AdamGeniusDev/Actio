@@ -1,0 +1,30 @@
+{
+  "greeting": "Hello, {{name}} 👋",
+  "streak": "Streak: {{count}}d",
+  "your_day": "Your day",
+  "completed": "{{count}} completed",
+  "in_progress": "{{count}} in progress",
+  "remaining": "{{count}} remaining",
+  "progress_label": "Progress",
+  "next_label": "UP NEXT",
+  "imminent_label": "IMMINENT",
+  "view_details": "View details",
+  "my_tasks": "📋 My tasks",
+  "see_all": "See all",
+  "empty_title": "Free day! 🎉",
+  "empty_subtitle": "No tasks for today. Take some time to recharge or start planning for tomorrow.",
+  "add_task": "Add a task",
+  "see_week": "See the week",
+  "search": {
+    "placeholder": "Search a task...",
+    "cancel": "Cancel",
+    "empty": "No results"
+  },
+  "notifications": {
+    "title": "Notifications",
+    "overdue": "Overdue: {{title}}",
+    "dueSoon": "Coming up: {{title}}",
+    "garantInvite": "Pending invite: {{title}}",
+    "empty": "No notifications yet"
+  }
+}
