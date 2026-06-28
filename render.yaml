@@ -26,12 +26,10 @@ services:
         sync: false
       - key: BETTER_AUTH_SECRET
         sync: false
-      # Renseigne avec l'URL https://xxx.onrender.com donnée par Render APRÈS
-      # le premier déploiement (impossible de la connaître avant).
       - key: PUBLIC_BASE_URL
-        sync: false
+        value: https://actio-backend.onrender.com
       - key: ALLOWED_ORIGIN
-        value: ""
+        value: "actio://"
       - key: LOG_LEVEL
         value: info
       - key: GOOGLE_CLIENT_ID
@@ -94,7 +92,7 @@ services:
       - key: BETTER_AUTH_SECRET
         sync: false
       - key: PUBLIC_BASE_URL
-        sync: false
+        value: https://actio-backend.onrender.com
       - key: GOOGLE_CLIENT_ID
         sync: false
       - key: GOOGLE_CLIENT_SECRET
