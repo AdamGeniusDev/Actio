@@ -69,7 +69,7 @@ services:
       - key: TERMII_SENDER_ID
         sync: false
       - key: TERMII_BASE_URL
-        value: https://api.ng.termii.com
+        value: https://v3.api.termii.com
 
   - type: worker
     name: actio-notification-dispatcher
@@ -114,4 +114,4 @@ services:
       - key: TERMII_SENDER_ID
         sync: false
       - key: TERMII_BASE_URL
-        value: https://api.ng.termii.com
+        value: https://v3.api.termii.com

@@ -1,9 +1,7 @@
 import env from "@/lib/env";
 
-// Une seule API pour SMS et WhatsApp — seul le "channel" change. Vérifie
-// TERMII_BASE_URL dans ton dashboard : ce n'est pas forcément
-// api.ng.termii.com selon ton compte/pays.
-const BASE_URL = env.TERMII_BASE_URL ?? "https://api.ng.termii.com";
+// Une seule API pour SMS et WhatsApp — seul le "channel" change.
+const BASE_URL = env.TERMII_BASE_URL ?? "https://v3.api.termii.com";
 
 async function sendViaTermii(phone: string, message: string, channel: "dnd" | "whatsapp"): Promise<void> {
   if (!env.TERMII_API_KEY || !env.TERMII_SENDER_ID) {
