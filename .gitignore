@@ -32,6 +32,12 @@ yarn-error.*
 
 # local env files
 .env*.local
+.env
+
+# backend (Bun) — bun.lock est volontairement COMMITÉ (pas ignoré) pour que
+# Render installe exactement les mêmes versions à chaque déploiement.
+backend/node_modules/
+backend/*.log
 
 # typescript
 *.tsbuildinfo

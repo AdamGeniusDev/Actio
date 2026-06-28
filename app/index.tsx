@@ -8,9 +8,9 @@ export default function RootIndex() {
     return <Redirect href="/(onboarding)/welcome" />;
   }
 
-  // if (!isAuthenticated) {
-  //   return <Redirect href="/(auth)/forgot-password" />;
-  // }
+  if (!isAuthenticated) {
+    return <Redirect href="/(auth)/login" />;
+  }
 
   return <Redirect href="/(app)/(home)" />;
 }

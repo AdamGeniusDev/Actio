@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { Tabs } from 'expo-router';
+import { Redirect, Tabs } from 'expo-router';
 import { View, Pressable } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import Animated, {
@@ -22,6 +22,7 @@ import {
 import { TaskCreationSheet } from '@/components/tasks/TaskCreationSheet';
 import { Shadows, Gradients } from '@/constants/theme';
 import { useUIStore } from '@/stores/ui.store';
+import { useAuthStore } from '@/stores/auth.store';
 
 // ─── Icône standard (Home / Semaine / Stats / Réglages) ───────────────────────
 // Pas de label (façon Instagram) : les icônes seules suffisent, et ça évite
@@ -101,6 +102,12 @@ function CreateTabIcon() {
 
 export default function AppLayout() {
   const openTaskSheet = useUIStore((s) => s.openTaskSheet);
+  const isAuthenticated = useAuthStore((s) => s.isAuthenticated);
+
+  // Protège un accès direct (deep link, état restauré) sans session.
+  if (!isAuthenticated) {
+    return <Redirect href="/(auth)/login" />;
+  }
 
   return (
     <View style={{ flex: 1, backgroundColor: '#080D14' }}>

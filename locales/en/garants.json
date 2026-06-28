@@ -65,7 +65,9 @@
     },
     "fields": {
       "firstName": "FIRST NAME",
-      "lastName": "LAST NAME"
+      "lastName": "LAST NAME",
+      "contact": "PHONE OR EMAIL",
+      "contactPlaceholder": "+1 555 123 4567 or email@example.com"
     },
     "relationship": {
       "label": "RELATIONSHIP"
@@ -94,7 +96,8 @@
     },
     "validation": {
       "emailRequired": "Email is required",
-      "firstNameRequired": "First name is required"
+      "firstNameRequired": "First name is required",
+      "contactRequired": "Enter a phone number or email so this Garant can actually be alerted"
     }
   },
   "edit": {

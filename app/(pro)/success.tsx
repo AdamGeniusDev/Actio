@@ -17,6 +17,7 @@ import { CheckCircle2 } from 'lucide-react-native';
 import { Animation, Gradients, Shadows } from '@/constants/theme';
 import { Button } from '@/components/ui/Button';
 import { GlowBackground, type GlowBlobConfig } from '@/components/ui/GlowBackground';
+import { useSubscriptionStatusQuery } from '@/hooks/api/useSubscription';
 
 // ─── Config des lueurs — C'EST ICI QUE TU PERSONNALISES TOUT ─────────────────
 // Touche uniquement ce tableau pour changer couleurs, tailles, positions,
@@ -128,13 +129,17 @@ export default function SuccessScreen() {
 
   const plan = params.plan === 'monthly' ? 'monthly' : 'yearly';
 
-  // ── Date du prochain prélèvement (fin d'essai, J+7) ─────────────────────
+  // Le webhook qui débloque isPro côté backend arrive de façon asynchrone —
+  // poll: true réinterroge jusqu'à confirmation, sans bloquer cet écran.
+  const { data: subscription } = useSubscriptionStatusQuery({ poll: true });
+
+  // Estimation J+7 en attendant la confirmation du webhook.
   const nextBillingDate = useMemo(() => {
-    const d = new Date();
-    d.setDate(d.getDate() + 7);
     const locale = i18n.language?.startsWith('en') ? 'en-US' : 'fr-FR';
+    const d = subscription?.currentPeriodEnd ? new Date(subscription.currentPeriodEnd) : new Date();
+    if (!subscription?.currentPeriodEnd) d.setDate(d.getDate() + 7);
     return d.toLocaleDateString(locale, { day: 'numeric', month: 'long', year: 'numeric' });
-  }, [i18n.language]);
+  }, [i18n.language, subscription?.currentPeriodEnd]);
 
   // ── Entrée du badge (spring) ─────────────────────────────────────────────
   const scale = useSharedValue(0);

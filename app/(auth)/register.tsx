@@ -16,6 +16,10 @@ import { Button } from '@/components/ui/Button';
 import { GoogleIcon } from '@/components/ui/GoogleIcon';
 import { Animation } from '@/constants/theme';
 import { registerSchema, type RegisterForm } from '@/utils/validator';
+import { useRegisterMutation, useGoogleSignInMutation } from '@/hooks/api/useAuth';
+import { signInWithGoogle } from '@/lib/googleAuth';
+import { useUIStore } from '@/stores/ui.store';
+import { ApiError } from '@/lib/api/client';
 
 const STRENGTH_COLORS = ['#FF3B5C', '#FFB800', '#4D9EFF', '#00D68F'];
 
@@ -31,6 +35,10 @@ function getPasswordStrength(password: string) {
 export default function RegisterScreen() {
   const { t } = useTranslation('auth');
   const router = useRouter();
+  const addToast = useUIStore((s) => s.addToast);
+
+  const registerMutation = useRegisterMutation();
+  const googleMutation = useGoogleSignInMutation();
 
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -68,8 +76,33 @@ export default function RegisterScreen() {
 
     if (!canSubmit) return;
     setErrors({});
-    // TODO: register mutation (TanStack Query)
+    registerMutation.mutate(result.data, {
+      onSuccess: () => router.replace('/(app)/(home)' as any),
+      onError: (error) => {
+        const message = error instanceof ApiError ? error.message : t('register.errors.generic');
+        addToast({ message, type: 'error' });
+      },
+    });
   };
+
+  const handleGoogleSignIn = async () => {
+    try {
+      const idToken = await signInWithGoogle();
+      if (!idToken) return;
+
+      googleMutation.mutate(idToken, {
+        onSuccess: () => router.replace('/(app)/(home)' as any),
+        onError: (error) => {
+          const message = error instanceof ApiError ? error.message : t('register.errors.generic');
+          addToast({ message, type: 'error' });
+        },
+      });
+    } catch {
+      addToast({ message: t('register.errors.googleUnavailable'), type: 'error' });
+    }
+  };
+
+  const isLoading = registerMutation.isPending || googleMutation.isPending;
 
   return (
     <SafeScreenView withTabBar={false}>
@@ -190,7 +223,8 @@ export default function RegisterScreen() {
             size="l"
             label={t('register.submit')}
             onPress={handleSubmit}
-            disabled={!canSubmit}
+            disabled={!canSubmit || isLoading}
+            loading={registerMutation.isPending}
             className="mt-2xl"
           />
 
@@ -207,7 +241,9 @@ export default function RegisterScreen() {
             size="l"
             label={t('common.continueWithGoogle')}
             leftIcon={GoogleIcon}
-            onPress={() => {}}
+            onPress={handleGoogleSignIn}
+            loading={googleMutation.isPending}
+            disabled={isLoading}
           />
 
           {/* Footer */}

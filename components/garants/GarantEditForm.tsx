@@ -53,6 +53,7 @@ export function GarantEditForm({ garant, isPro, onSave, onCancel }: Props) {
 
   const [firstName, setFirstName] = useState(garant.firstName);
   const [lastName, setLastName] = useState(garant.lastName);
+  const [contact, setContact] = useState(garant.contact ?? '');
   const [relationship, setRelationship] = useState<Relationship>(garant.relationship);
   const [delayMinutes, setDelayMinutes] = useState<DelayMinutes>(garant.alertDelayMinutes);
   const [emailEnabled, setEmailEnabled] = useState(garant.channels?.email ?? true);
@@ -67,12 +68,19 @@ export function GarantEditForm({ garant, isPro, onSave, onCancel }: Props) {
         return;
       }
 
+      const channels = { email: emailEnabled, sms: isPro && smsEnabled, whatsapp: isPro && whatsappEnabled };
+      if ((channels.email || channels.sms || channels.whatsapp) && !contact.trim()) {
+        Alert.alert(t('add.validation.contactRequired'));
+        return;
+      }
+
       onSave({
         relationship,
         alertDelayMinutes: delayMinutes,
         firstName: result.data.firstName,
         lastName:  result.data.lastName ?? '',
-        channels:  { email: emailEnabled, sms: isPro && smsEnabled, whatsapp: isPro && whatsappEnabled },
+        contact:   contact.trim() || undefined,
+        channels,
       });
       return;
     }
@@ -155,6 +163,23 @@ export function GarantEditForm({ garant, isPro, onSave, onCancel }: Props) {
                 placeholder="Moreau"
                 placeholderTextColor="#4A6480"
                 autoCapitalize="words"
+                style={{ fontFamily: 'Inter-Regular', fontSize: 15, color: '#F0F6FF' }}
+              />
+            </View>
+          </View>
+
+          <View className="mb-[20px]">
+            <SectionLabel label={t('add.fields.contact')} />
+            <View
+              className="rounded-[14px] px-[16px]"
+              style={{ height: 52, backgroundColor: '#0D1520', borderWidth: 1.5, borderColor: '#1E3048', justifyContent: 'center' }}
+            >
+              <BottomSheetTextInput
+                value={contact}
+                onChangeText={setContact}
+                placeholder={t('add.fields.contactPlaceholder')}
+                placeholderTextColor="#4A6480"
+                autoCapitalize="none"
                 style={{ fontFamily: 'Inter-Regular', fontSize: 15, color: '#F0F6FF' }}
               />
             </View>

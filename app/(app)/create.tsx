@@ -5,6 +5,13 @@ import { useRouter } from 'expo-router';
 import { useTranslation } from 'react-i18next';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Sparkles, Mic, Send, Lock, Crown, Pencil } from 'lucide-react-native';
+import {
+  useAudioRecorder,
+  RecordingPresets,
+  requestRecordingPermissionsAsync,
+  setAudioModeAsync,
+} from 'expo-audio';
+import { File } from 'expo-file-system';
 
 import { Shadows } from '@/constants/theme';
 import { SafeScreenView } from '@/components/layout/SafeScreenView';
@@ -15,9 +22,14 @@ import { useUIStore } from '@/stores/ui.store';
 import { useTasksStore } from '@/stores/tasks.store';
 import { ICON_TYPE_ICON, ICON_TYPE_COLOR } from '@/utils/taskAction.utils';
 import { dateUtils } from '@/utils/date.utils';
-import { analyzeVoiceInput, type DetectedTask } from '@/lib/aiTaskParser';
+import type { DetectedTask } from '@/lib/aiTaskParser';
+import { useParseTaskFromAudioMutation, useParseTaskFromTextMutation } from '@/hooks/api/useAi';
+import { ApiError } from '@/lib/api/client';
 
 const SUGGESTIONS = ['suggestion1', 'suggestion2', 'suggestion3'] as const;
+
+// Sortie de RecordingPresets.HIGH_QUALITY — doit matcher un format accepté côté backend.
+const RECORDING_FORMAT = 'm4a';
 
 // ─── ProGate ───────────────────────────────────────────────────────────────────
 
@@ -61,36 +73,88 @@ export default function CreateAIScreen() {
   const isPro    = useAuthStore((s) => s.user?.isPro ?? false);
   const addTask  = useTasksStore((s) => s.addTask);
   const openTaskSheet = useUIStore((s) => s.openTaskSheet);
+  const addToast = useUIStore((s) => s.addToast);
 
   const [input, setInput]   = useState('');
   const [recording, setRecording] = useState(false);
   const [detected, setDetected]   = useState<DetectedTask | null>(null);
 
+  const recorder = useAudioRecorder(RecordingPresets.HIGH_QUALITY);
+  const parseTextMutation  = useParseTaskFromTextMutation();
+  const parseAudioMutation = useParseTaskFromAudioMutation();
+
   const micScale = useSharedValue(1);
 
-  function startRecording() {
-    setRecording(true);
-    micScale.value = withRepeat(withSequence(withTiming(1.15, { duration: 500 }), withTiming(1, { duration: 500 })), -1, true);
-    // TODO [API]: remplacer par un vrai enregistrement (expo-audio) + envoi au
-    // backend pour transcription. Ici on simule juste un délai d'écoute.
-    setTimeout(() => {
-      micScale.value = withTiming(1, { duration: 200 });
-      setRecording(false);
-      const sample = t('ai.micSampleResult');
-      setInput(sample);
-      setDetected(analyzeVoiceInput(sample));
-    }, 1600);
+  function handleApiError(error: unknown) {
+    const message = error instanceof ApiError ? error.message : t('ai.errors.generic');
+    addToast({ message, type: 'error' });
   }
 
-  function handleSend() {
-    if (!input.trim()) return;
-    setDetected(analyzeVoiceInput(input));
+  async function startRecording() {
+    try {
+      const { granted } = await requestRecordingPermissionsAsync();
+      if (!granted) {
+        addToast({ message: t('ai.errors.micPermission'), type: 'error' });
+        return;
+      }
+      await setAudioModeAsync({ allowsRecording: true, playsInSilentMode: true });
+      await recorder.prepareToRecordAsync();
+      recorder.record();
+
+      setRecording(true);
+      micScale.value = withRepeat(withSequence(withTiming(1.15, { duration: 500 }), withTiming(1, { duration: 500 })), -1, true);
+    } catch {
+      addToast({ message: t('ai.errors.recordingFailed'), type: 'error' });
+    }
   }
 
-  function handleSuggestion(key: string) {
+  async function stopRecording() {
+    micScale.value = withTiming(1, { duration: 200 });
+    setRecording(false);
+
+    try {
+      await recorder.stop();
+      const uri = recorder.uri;
+      if (!uri) {
+        addToast({ message: t('ai.errors.recordingFailed'), type: 'error' });
+        return;
+      }
+
+      const audioBase64 = await new File(uri).base64();
+      setInput('');
+      const result = await parseAudioMutation.mutateAsync({ audioBase64, format: RECORDING_FORMAT });
+      setDetected(result);
+    } catch (error) {
+      handleApiError(error);
+    }
+  }
+
+  function handleMicPress() {
+    if (parseAudioMutation.isPending) return;
+    if (recording) stopRecording();
+    else startRecording();
+  }
+
+  async function handleSend() {
+    if (!input.trim() || parseTextMutation.isPending) return;
+    try {
+      const result = await parseTextMutation.mutateAsync(input.trim());
+      setDetected(result);
+    } catch (error) {
+      handleApiError(error);
+    }
+  }
+
+  async function handleSuggestion(key: string) {
     const text = t(`ai.suggestions.${key}`);
     setInput(text);
-    setDetected(analyzeVoiceInput(text));
+    if (parseTextMutation.isPending) return;
+    try {
+      const result = await parseTextMutation.mutateAsync(text);
+      setDetected(result);
+    } catch (error) {
+      handleApiError(error);
+    }
   }
 
   function handleCreate() {
@@ -108,6 +172,7 @@ export default function CreateAIScreen() {
   }
 
   const micStyle = useAnimatedStyle(() => ({ transform: [{ scale: micScale.value }] }));
+  const isParsing = parseTextMutation.isPending || parseAudioMutation.isPending;
 
   if (!isPro) {
     return (
@@ -156,7 +221,7 @@ export default function CreateAIScreen() {
 
         {/* ── Micro ────────────────────────────────────────────────────────── */}
         <View className="items-center mb-[24px]">
-          <Pressable onPress={startRecording} disabled={recording}>
+          <Pressable onPress={handleMicPress} disabled={parseAudioMutation.isPending}>
             <Animated.View style={micStyle}>
               <View
                 className="w-[88px] h-[88px] rounded-full items-center justify-center"
@@ -167,7 +232,11 @@ export default function CreateAIScreen() {
             </Animated.View>
           </Pressable>
           <Text className="font-inter-semibold text-label text-text-muted uppercase tracking-widest mt-[12px]">
-            {recording ? t('ai.listening') : t('ai.tapToSpeak')}
+            {recording
+              ? t('ai.listening')
+              : parseAudioMutation.isPending
+                ? t('ai.analyzing')
+                : t('ai.tapToSpeak')}
           </Text>
         </View>
 
@@ -182,10 +251,11 @@ export default function CreateAIScreen() {
             placeholder={t('ai.textPlaceholder')}
             placeholderTextColor="#4A6480"
             onSubmitEditing={handleSend}
+            editable={!isParsing}
             style={{ flex: 1, fontFamily: 'Inter-Regular', fontSize: 15, color: '#F0F6FF' }}
           />
-          <Pressable onPress={handleSend} hitSlop={8}>
-            <Send size={18} color="#FF6B1A" strokeWidth={2} />
+          <Pressable onPress={handleSend} hitSlop={8} disabled={isParsing}>
+            <Send size={18} color={isParsing ? '#4A6480' : '#FF6B1A'} strokeWidth={2} />
           </Pressable>
         </View>
 
@@ -198,6 +268,7 @@ export default function CreateAIScreen() {
             <Pressable
               key={key}
               onPress={() => handleSuggestion(key)}
+              disabled={isParsing}
               className="self-start px-[14px] py-[10px] rounded-full border border-subtle"
               style={{ backgroundColor: '#121E2E' }}
             >

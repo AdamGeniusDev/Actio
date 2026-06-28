@@ -65,7 +65,9 @@
     },
     "fields": {
       "firstName": "PRÉNOM",
-      "lastName": "NOM"
+      "lastName": "NOM",
+      "contact": "TÉLÉPHONE OU EMAIL",
+      "contactPlaceholder": "+221 77 123 45 67 ou email@exemple.com"
     },
     "relationship": {
       "label": "RELATION"
@@ -94,7 +96,8 @@
     },
     "validation": {
       "emailRequired": "L'email est obligatoire",
-      "firstNameRequired": "Le prénom est obligatoire"
+      "firstNameRequired": "Le prénom est obligatoire",
+      "contactRequired": "Renseignez un téléphone ou un email pour pouvoir alerter ce Garant"
     }
   },
   "edit": {

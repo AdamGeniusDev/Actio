@@ -70,6 +70,9 @@
   },
   "checkout": {
     "header": "Finalize your order",
+    "errors": {
+      "generic": "Couldn't create the payment right now, please try again."
+    },
     "plan": {
       "yearly": "Pro Annual",
       "monthly": "Pro Monthly",

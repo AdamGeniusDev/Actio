@@ -1,0 +1,117 @@
+# Blueprint Render — déploie les DEUX process nécessaires au backend en une
+# fois ("New > Blueprint" sur Render, en pointant ce repo). Les deux services
+# partagent le même code (rootDir: backend) mais pas le même rôle :
+#   - actio-backend          : serveur HTTP (API + auth + webhooks)
+#   - actio-notification-dispatcher : boucle qui envoie les alertes Garant dues
+#
+# Un Background Worker n'est pas inclus dans l'offre gratuite Render — vérifie
+# ton plan avant de déployer les deux services.
+#
+# runtime: node est la valeur acceptée par Render, mais Bun est utilisé
+# automatiquement dès qu'un bun.lock est détecté à la racine du service
+# (cf. backend/bun.lock, volontairement commité — voir .gitignore).
+services:
+  - type: web
+    name: actio-backend
+    runtime: node
+    rootDir: backend
+    plan: free
+    buildCommand: bun install
+    startCommand: bun run start
+    # Applique les migrations en attente avant que la nouvelle version ne
+    # commence à servir du trafic — idempotent, sûr à rejouer à chaque déploiement.
+    preDeployCommand: bun run db:migrate
+    envVars:
+      - key: DATABASE_URL
+        sync: false
+      - key: BETTER_AUTH_SECRET
+        sync: false
+      # Renseigne avec l'URL https://xxx.onrender.com donnée par Render APRÈS
+      # le premier déploiement (impossible de la connaître avant).
+      - key: PUBLIC_BASE_URL
+        sync: false
+      - key: ALLOWED_ORIGIN
+        value: ""
+      - key: LOG_LEVEL
+        value: info
+      - key: GOOGLE_CLIENT_ID
+        sync: false
+      - key: GOOGLE_CLIENT_SECRET
+        sync: false
+      - key: OPENROUTER_API_KEY
+        sync: false
+      - key: LLM_MODEL
+        value: openai/gpt-oss-20b:free
+      - key: LLM_AUDIO_MODEL
+        value: nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free
+      - key: MONEROO_API_KEY
+        sync: false
+      - key: MONEROO_WEBHOOK_SECRET
+        sync: false
+      - key: LEMONSQUEEZY_API_KEY
+        sync: false
+      - key: LEMONSQUEEZY_STORE_ID
+        sync: false
+      - key: LEMONSQUEEZY_PRODUCT_ID
+        sync: false
+      - key: LEMONSQUEEZY_VARIANT_ID_MONTHLY
+        sync: false
+      - key: LEMONSQUEEZY_VARIANT_ID_YEARLY
+        sync: false
+      - key: LEMONSQUEEZY_WEBHOOK_SECRET
+        sync: false
+      - key: RESEND_API_KEY
+        sync: false
+      - key: EMAIL_FROM
+        sync: false
+      - key: TERMII_API_KEY
+        sync: false
+      - key: TERMII_SENDER_ID
+        sync: false
+      - key: TERMII_BASE_URL
+        value: https://api.ng.termii.com
+
+  - type: worker
+    name: actio-notification-dispatcher
+    runtime: node
+    rootDir: backend
+    plan: starter
+    buildCommand: bun install
+    startCommand: bun run jobs:dispatcher
+    # IMPORTANT : src/lib/env.ts valide TOUTES les variables obligatoires en
+    # un seul bloc au démarrage (fail-fast), même si ce process n'utilise en
+    # pratique que DATABASE_URL/RESEND_*/TERMII_* — il a donc besoin des
+    # MÊMES variables obligatoires que actio-backend ci-dessus (mêmes
+    # valeurs, à dupliquer dans le dashboard), sinon il plante au lancement
+    # faute de BETTER_AUTH_SECRET/OPENROUTER_API_KEY/MONEROO_*. Les valeurs
+    # optionnelles spécifiques à l'auth/IA/paiement n'ont aucun effet ici,
+    # elles sont juste nécessaires pour que la validation passe.
+    envVars:
+      - key: DATABASE_URL
+        sync: false
+      - key: LOG_LEVEL
+        value: info
+      - key: BETTER_AUTH_SECRET
+        sync: false
+      - key: PUBLIC_BASE_URL
+        sync: false
+      - key: GOOGLE_CLIENT_ID
+        sync: false
+      - key: GOOGLE_CLIENT_SECRET
+        sync: false
+      - key: OPENROUTER_API_KEY
+        sync: false
+      - key: MONEROO_API_KEY
+        sync: false
+      - key: MONEROO_WEBHOOK_SECRET
+        sync: false
+      - key: RESEND_API_KEY
+        sync: false
+      - key: EMAIL_FROM
+        sync: false
+      - key: TERMII_API_KEY
+        sync: false
+      - key: TERMII_SENDER_ID
+        sync: false
+      - key: TERMII_BASE_URL
+        value: https://api.ng.termii.com

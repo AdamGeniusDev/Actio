@@ -17,10 +17,15 @@ import {
 } from 'lucide-react-native';
 import type { LucideIcon } from 'lucide-react-native';
 import * as Localization from 'expo-localization';
+import * as WebBrowser from 'expo-web-browser';
+import * as Linking from 'expo-linking';
 
 import { Animation, Shadows } from '@/constants/theme';
 import { SafeScreenView } from '@/components/layout/SafeScreenView';
 import { Button } from '@/components/ui/Button';
+import { useCreateCheckoutMutation } from '@/hooks/api/useSubscription';
+import { useUIStore } from '@/stores/ui.store';
+import { ApiError } from '@/lib/api/client';
 
 // ─── Région ───────────────────────────────────────────────────────────────────
 
@@ -382,6 +387,8 @@ export default function CheckoutScreen() {
   const router  = useRouter();
   const insets  = useSafeAreaInsets();
   const region  = useRegion();
+  const addToast = useUIStore((s) => s.addToast);
+  const createCheckoutMutation = useCreateCheckoutMutation();
   const params  = useLocalSearchParams<{ plan?: string; price?: string; unit?: string; period?: string }>();
 
   // ── Plan reçu depuis l'écran pricing ────────────────────────────────────
@@ -417,20 +424,36 @@ export default function CheckoutScreen() {
   // ── État de soumission ───────────────────────────────────────────────────
   const [status, setStatus] = useState<'idle' | 'processing'>('idle');
 
-  function handleSubmit() {
+  // Le choix de "moyen de paiement" ci-dessus est purement visuel — le
+  // backend génère un seul lien (Moneroo ou LemonSqueezy selon le pays),
+  // et c'est la page hébergée par ce prestataire qui propose réellement
+  // carte/mobile money/PayPal. Rien de saisi ci-dessus n'est transmis.
+  async function handleSubmit() {
     if (status === 'processing') return;
     setStatus('processing');
-    // TODO: brancher le vrai provider selon `method`
-    // - card          → Stripe / autre PSP carte
-    // - mobile_money  → CinetPay / PayDunya / agrégateur mobile money (operator, phone)
-    // - apple_pay     → Apple Pay sheet natif
-    // - paypal        → PayPal checkout
-    setTimeout(() => {
-      router.replace({
-        pathname: '/(app)/(pro)/success',
-        params: { plan },
-      } as any);
-    }, 1500);
+
+    try {
+      const returnUrl = Linking.createURL('pro/success', { queryParams: { plan } });
+      const countryCode = Localization.getLocales()?.[0]?.regionCode ?? undefined;
+
+      const { checkoutUrl } = await createCheckoutMutation.mutateAsync({
+        returnUrl,
+        countryCode,
+        billingPeriod: plan,
+      });
+
+      const result = await WebBrowser.openAuthSessionAsync(checkoutUrl, returnUrl);
+
+      if (result.type === 'success') {
+        router.replace({ pathname: '/(app)/(pro)/success', params: { plan } } as any);
+      } else {
+        setStatus('idle'); // annulé/fermé par l'utilisateur, pas une erreur
+      }
+    } catch (error) {
+      setStatus('idle');
+      const message = error instanceof ApiError ? error.message : t('checkout.errors.generic');
+      addToast({ message, type: 'error' });
+    }
   }
 
   const planLabel = t(`checkout.summary.planLabel.${plan}`);

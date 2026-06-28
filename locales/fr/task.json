@@ -94,6 +94,7 @@
     "greeting": "Bonjour ! Décrivez ce que vous devez faire, et je m'occupe de l'organiser pour vous.",
     "tapToSpeak": "Appuyez pour parler",
     "listening": "Je vous écoute...",
+    "analyzing": "Analyse en cours...",
     "micSampleResult": "Appeler l'imprimerie ONIP demain, c'est urgent",
     "textPlaceholder": "Ou écrivez ici votre demande...",
     "suggestionsLabel": "Suggestions",
@@ -104,7 +105,12 @@
     },
     "detectedLabel": "Résultat détecté",
     "createCta": "Créer",
-    "modifyCta": "Modifier"
+    "modifyCta": "Modifier",
+    "errors": {
+      "generic": "L'assistant IA est indisponible pour le moment, réessayez.",
+      "micPermission": "Autorisez l'accès au micro pour dicter une tâche.",
+      "recordingFailed": "L'enregistrement a échoué, réessayez."
+    }
   },
   "iconTypes": {
     "call": "Appel",

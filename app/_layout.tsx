@@ -13,6 +13,7 @@ import { NAV_THEME } from '@/constants/theme';
 import { queryClient } from '@/lib/queryClient';
 import { ToastHost } from '@/components/ui/Toast';
 import { AlarmOverlay } from '@/components/alarm/AlarmOverlay';
+import { SessionGate } from '@/components/auth/SessionGate';
 import { BottomSheetModalProvider } from '@gorhom/bottom-sheet';
 import { KeyboardProvider } from 'react-native-keyboard-controller';
 
@@ -82,6 +83,7 @@ export default function RootLayout() {
               <ThemeProvider value={NAV_THEME.dark}>
                 <StatusBar style="light" />
                 <Stack screenOptions={{ headerShown: false ,contentStyle: { backgroundColor: '#080D14' } }} />
+                <SessionGate />
                 <AlarmOverlay />
                 <ToastHost />
                 <PortalHost />

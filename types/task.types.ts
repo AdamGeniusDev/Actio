@@ -50,6 +50,10 @@ export interface Task {
   scheduledAt:  string;        // ISO string
   completedAt?: string;
   garantId?:    string;
+  // Id de l'alerte programmée côté backend (cf. lib/api/notificationsApi.ts)
+  // — posé après coup, de façon asynchrone, par la synchronisation dans
+  // tasks.store.ts. Jamais fourni par l'utilisateur (absent de CreateTaskDTO).
+  notificationId?: string;
   action?:      TaskAction;    // ← optionnel, indépendant de iconType
   location?:    TaskLocation;  // ← Pro uniquement
   createdAt:    string;

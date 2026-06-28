@@ -70,6 +70,9 @@
   },
   "checkout": {
     "header": "Finaliser votre commande",
+    "errors": {
+      "generic": "Impossible de créer le paiement pour le moment, réessayez."
+    },
     "plan": {
       "yearly": "Pro Annuel",
       "monthly": "Pro Mensuel",

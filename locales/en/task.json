@@ -94,6 +94,7 @@
     "greeting": "Hi! Describe what you need to do, and I'll organize it for you.",
     "tapToSpeak": "Tap to speak",
     "listening": "Listening...",
+    "analyzing": "Analyzing...",
     "micSampleResult": "Call ONIP printing tomorrow, it's urgent",
     "textPlaceholder": "Or type your request here...",
     "suggestionsLabel": "Suggestions",
@@ -104,7 +105,12 @@
     },
     "detectedLabel": "Detected result",
     "createCta": "Create",
-    "modifyCta": "Modify"
+    "modifyCta": "Modify",
+    "errors": {
+      "generic": "The AI assistant is unavailable right now, please try again.",
+      "micPermission": "Allow microphone access to dictate a task.",
+      "recordingFailed": "Recording failed, please try again."
+    }
   },
   "iconTypes": {
     "call": "Call",

@@ -11,15 +11,23 @@ import { Input } from '@/components/ui/Input';
 import { Button } from '@/components/ui/Button';
 import { GoogleIcon } from '@/components/ui/GoogleIcon';
 import { loginSchema, type LoginForm } from '@/utils/validator';
+import { useLoginMutation, useGoogleSignInMutation } from '@/hooks/api/useAuth';
+import { signInWithGoogle } from '@/lib/googleAuth';
+import { useUIStore } from '@/stores/ui.store';
+import { ApiError } from '@/lib/api/client';
 
 export default function LoginScreen() {
   const { t } = useTranslation('auth');
   const router = useRouter();
+  const addToast = useUIStore((s) => s.addToast);
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [errors, setErrors] = useState<Partial<Record<keyof LoginForm, string>>>({});
+
+  const loginMutation = useLoginMutation();
+  const googleMutation = useGoogleSignInMutation();
 
   const handleSubmit = () => {
     const result = loginSchema.safeParse({ email, password });
@@ -35,8 +43,33 @@ export default function LoginScreen() {
     }
 
     setErrors({});
-    // TODO: login mutation (TanStack Query) → useAuthStore.setAuthenticated
+    loginMutation.mutate(result.data, {
+      onSuccess: () => router.replace('/(app)/(home)' as any),
+      onError: (error) => {
+        const message = error instanceof ApiError ? error.message : t('login.errors.generic');
+        addToast({ message, type: 'error' });
+      },
+    });
   };
+
+  const handleGoogleSignIn = async () => {
+    try {
+      const idToken = await signInWithGoogle();
+      if (!idToken) return; // annulé par l'utilisateur, pas une erreur à afficher
+
+      googleMutation.mutate(idToken, {
+        onSuccess: () => router.replace('/(app)/(home)' as any),
+        onError: (error) => {
+          const message = error instanceof ApiError ? error.message : t('login.errors.generic');
+          addToast({ message, type: 'error' });
+        },
+      });
+    } catch {
+      addToast({ message: t('login.errors.googleUnavailable'), type: 'error' });
+    }
+  };
+
+  const isLoading = loginMutation.isPending || googleMutation.isPending;
 
   return (
     <SafeScreenView withTabBar={false}>
@@ -110,6 +143,8 @@ export default function LoginScreen() {
             size="l"
             rightIcon={ArrowRight}
             onPress={handleSubmit}
+            loading={loginMutation.isPending}
+            disabled={isLoading}
             className="mt-2xl"
           />
 
@@ -124,7 +159,9 @@ export default function LoginScreen() {
             variant="secondary"
             size="l"
             leftIcon={GoogleIcon}
-            onPress={() => {}}
+            onPress={handleGoogleSignIn}
+            loading={googleMutation.isPending}
+            disabled={isLoading}
           />
 
           <View className="flex-row justify-center items-center mt-3xl">

@@ -17,5 +17,10 @@
     ".expo/types/**/*.ts",
     "expo-env.d.ts",
     "nativewind-env.d.ts"
-  ]
+  ],
+  // backend/ a son propre tsconfig.json (Bun, alias "@/" différent) — sans
+  // cette exclusion, tsc essayait de le type-checker avec la config
+  // frontend et générait des erreurs sans rapport. example/ est un scaffold
+  // Expo non utilisé par l'app.
+  "exclude": ["node_modules", "backend", "example"]
 }

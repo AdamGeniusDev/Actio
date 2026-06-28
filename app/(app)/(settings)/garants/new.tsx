@@ -298,6 +298,7 @@ function ImportFromContacts({
 function DirectForm({
   firstName, onFirstNameChange,
   lastName,  onLastNameChange,
+  contact,   onContactChange,
   isPro,
   smsEnabled,      onSmsToggle,
   whatsappEnabled, onWhatsappToggle,
@@ -308,6 +309,8 @@ function DirectForm({
   onFirstNameChange:(v: string) => void;
   lastName:         string;
   onLastNameChange: (v: string) => void;
+  contact:          string;
+  onContactChange:  (v: string) => void;
   isPro:            boolean;
   smsEnabled:       boolean;
   onSmsToggle:      (v: boolean) => void;
@@ -334,6 +337,14 @@ function DirectForm({
         value={lastName}
         onChangeText={onLastNameChange}
         placeholder="Moreau"
+      />
+      <StyledInput
+        label={t('add.fields.contact')}
+        value={contact}
+        onChangeText={onContactChange}
+        placeholder={t('add.fields.contactPlaceholder')}
+        autoCapitalize="none"
+        keyboardType={smsEnabled || whatsappEnabled ? 'phone-pad' : 'email-address'}
       />
 
       <View className="mb-[28px]">
@@ -596,6 +607,7 @@ export default function AddGarantScreen() {
   // Mode "direct" — nom + canaux
   const [firstName,       setFirstName]       = useState('');
   const [lastName,        setLastName]        = useState('');
+  const [contact,         setContact]         = useState('');
   const [emailEnabled,    setEmailEnabled]    = useState(true);
   const [smsEnabled,      setSmsEnabled]      = useState(false);
   const [whatsappEnabled, setWhatsappEnabled] = useState(false);
@@ -609,10 +621,10 @@ export default function AddGarantScreen() {
     }
   }, [isPro, delayMinutes]);
 
-  function handleContactImport(fn: string, ln: string, _phone: string) {
+  function handleContactImport(fn: string, ln: string, phone: string) {
     setFirstName(fn);
     setLastName(ln);
-    // TODO [contacts]: stocker phone si ajouté au type Garant
+    if (phone) setContact(phone);
   }
 
   function handleSave() {
@@ -639,11 +651,17 @@ export default function AddGarantScreen() {
         Alert.alert(t('add.validation.firstNameRequired'));
         return;
       }
+      const channels = { email: emailEnabled, sms: isPro && smsEnabled, whatsapp: isPro && whatsappEnabled };
+      if ((channels.email || channels.sms || channels.whatsapp) && !contact.trim()) {
+        Alert.alert(t('add.validation.contactRequired'));
+        return;
+      }
       addGarant({
         mode:      'direct',
         firstName: result.data.firstName,
         lastName:  result.data.lastName ?? '',
-        channels:  { email: emailEnabled, sms: isPro && smsEnabled, whatsapp: isPro && whatsappEnabled },
+        contact:   contact.trim() || undefined,
+        channels,
         relationship,
         alertDelayMinutes: delayMinutes,
       });
@@ -696,6 +714,7 @@ export default function AddGarantScreen() {
             <DirectForm
               firstName={firstName}        onFirstNameChange={setFirstName}
               lastName={lastName}          onLastNameChange={setLastName}
+              contact={contact}            onContactChange={setContact}
               isPro={isPro}
               smsEnabled={smsEnabled}           onSmsToggle={setSmsEnabled}
               whatsappEnabled={whatsappEnabled} onWhatsappToggle={setWhatsappEnabled}

@@ -14,4 +14,6 @@ export const QUERY_KEYS = {
     day: (date: string) => ['stats', date] as const,
   },
   user: { me: ['user', 'me'] as const },
+  auth: { session: ['auth', 'session'] as const },
+  subscriptions: { status: ['subscriptions', 'status'] as const },
 } as const;

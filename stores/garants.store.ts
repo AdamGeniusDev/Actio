@@ -23,6 +23,7 @@ export interface Garant {
   email?:             string;        // mode 'app' uniquement
   inviteStatus?:      InviteStatus;  // mode 'app' uniquement
   channels?:          GarantChannels; // mode 'direct' uniquement
+  contact?:           string; // téléphone ou email réel pour les canaux actifs (lib/garantNotifications.ts)
   relationship:       Relationship;
   alertDelayMinutes:  DelayMinutes;
   isActive:           boolean; // surveille une tâche en cours actuellement
@@ -58,11 +59,9 @@ const MOCK_GARANTS: Garant[] = [
   },
 ];
 
-// TODO [API]: remplacer ce store en mémoire par des requêtes Supabase
-// (table garants) + synchronisation après chaque mutation. Pour l'instant
-// tout vit en local, persisté sur l'appareil (cf. tasks.store.ts, même
-// pattern — avant ce fix, les garants se réinitialisaient aux données mock
-// à chaque redémarrage de l'app alors que les tâches survivaient).
+// 100% local par design — aucune table "garants" côté backend (cf.
+// backend/ARCHITECTURE.md). Seule l'alerte programmée pour une tâche
+// donnée est synchronisée (stores/tasks.store.ts), jamais la liste des Garants.
 export const useGarantsStore = create<GarantsState>()(
   persist(
     (set) => ({
@@ -70,36 +69,25 @@ export const useGarantsStore = create<GarantsState>()(
 
       addGarant: (g) => set((state) => ({
         garants: [...state.garants, { ...g, id: Date.now().toString(), isActive: false }],
-        // TODO [API]: POST /garants, remplacer l'id local par celui renvoyé par le backend
       })),
 
       updateGarant: (id, patch) => set((state) => ({
         garants: state.garants.map((g) => (g.id === id ? { ...g, ...patch } : g)),
-        // TODO [API]: PATCH /garants/:id
       })),
 
       removeGarant: (id) => set((state) => ({
         garants: state.garants.filter((g) => g.id !== id),
-        // TODO [API]: DELETE /garants/:id
       })),
 
       resendInvite: (id) => set((state) => ({
         garants: state.garants.map((g) =>
           g.id === id && g.mode === 'app' ? { ...g, inviteStatus: 'pending' } : g
         ),
-        // TODO [API]: POST /garants/:id/resend-invite
       })),
     }),
     {
       name: 'actio-garants',
-      // ── Couche storage ──────────────────────────────────────────────────
-      //
-      // ▶ MMKV — activer en prod (rebuild natif requis)
-      //
-      // import { mmkvStorage } from '@/lib/mmkvStorage';
-      // storage: createJSONStorage(() => mmkvStorage),
-      //
-      // ▶ AsyncStorage — actif pour l'instant (Expo Go / dev sans rebuild)
+      // MMKV en prod (rebuild natif requis) : storage: createJSONStorage(() => mmkvStorage)
       storage: createJSONStorage(() => AsyncStorage),
       partialize: (state) => ({ garants: state.garants }),
     },
