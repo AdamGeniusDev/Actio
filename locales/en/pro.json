@@ -69,46 +69,63 @@
     "quote": "\"Dominate your goals\nwithout limits.\""
   },
   "checkout": {
-    "header": "Finalize your order",
+    "header": {
+      "title": "Finalize your order"
+    },
     "errors": {
       "generic": "Couldn't create the payment right now, please try again."
     },
-    "plan": {
-      "yearly": "Pro Annual",
-      "monthly": "Pro Monthly",
-      "desc": "Unlimited access to all performance tools"
-    },
     "summary": {
+      "planLabel": {
+        "yearly": "Pro Annual",
+        "monthly": "Pro Monthly"
+      },
+      "planDesc": "Unlimited access to all performance tools",
       "subtotal": "Subtotal",
       "tax": "VAT",
       "total": "Total",
-      "secure": "Secure Checkout"
+      "secureBadge": "Secure Checkout"
     },
-    "methods": {
-      "label": "Payment method",
-      "card": "Card",
-      "mobileMoney": "Mobile Money"
-    },
-    "card": {
-      "number": "Card number",
-      "expiry": "Expiration"
-    },
-    "mobileMoney": {
-      "operator": "Choose your operator",
-      "phone": "Phone number",
-      "note": "You will receive a confirmation request on your phone. Payment is secured via Moneroo."
-    },
-    "paypal": {
-      "redirect": "You will be redirected to PayPal to complete the payment."
-    },
-    "applePay": {
-      "prompt": "Tap the Apple Pay button to confirm."
+    "payment": {
+      "sectionTitle": "Payment method",
+      "methods": {
+        "card": "Card",
+        "mobileMoney": "Mobile Money",
+        "paypal": "PayPal",
+        "applePay": "Apple Pay"
+      },
+      "card": {
+        "numberLabel": "Card number",
+        "numberPlaceholder": "1234 5678 9012 3456",
+        "expiryLabel": "Expiration",
+        "expiryPlaceholder": "MM/YY",
+        "cvcLabel": "CVC",
+        "cvcPlaceholder": "***"
+      },
+      "mobileMoney": {
+        "operatorLabel": "Choose your operator",
+        "operators": {
+          "mtn": "MTN",
+          "orange": "Orange",
+          "wave": "Wave",
+          "moov": "Moov"
+        },
+        "phoneLabel": "Phone number",
+        "phonePlaceholder": "+225 00 00 00 00"
+      },
+      "redirect": {
+        "applePay": "Tap the Apple Pay button to confirm.",
+        "paypal": "You will be redirected to PayPal to complete the payment."
+      }
     },
     "trust": {
       "ssl": "SSL Certified",
       "encrypted": "Encrypted Payment",
       "guarantee": "30-day guarantee"
     },
-    "cta": "Confirm & Pay"
+    "cta": {
+      "submit": "Confirm & Pay",
+      "processing": "Processing..."
+    }
   }
 }

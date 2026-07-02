@@ -5,8 +5,15 @@ import { errorJsonMessage } from "@/lib/json-message";
 import { initiateProCheckout, verifyMonerooSignature } from "@/lib/moneroo";
 import { resolvePaymentProvider } from "@/lib/region";
 import type { AppRouteHandler } from "@/lib/types";
+import env from "@/lib/env";
 import queries from "./subscriptions.queries";
 import type { CreateCheckout, GetStatus, LemonSqueezyWebhook, MonerooWebhook } from "./subscriptions.routes";
+
+// Montants XOF (FCFA) — synchronisés avec les prix affichés dans le pricing screen.
+const MONEROO_AMOUNTS: Record<"monthly" | "yearly", number> = {
+  monthly: 2_000,
+  yearly:  19_900,
+};
 
 export const createCheckoutHandler: AppRouteHandler<CreateCheckout> = async (c) => {
   const { returnUrl, countryCode, billingPeriod } = c.req.valid("json");
@@ -28,14 +35,19 @@ export const createCheckoutHandler: AppRouteHandler<CreateCheckout> = async (c) 
     const [firstName, ...rest] = user.name.trim().split(/\s+/);
     const lastName = rest.join(" ") || firstName;
 
+    // Moneroo exige une URL de retour HTTPS — le deep link natif (actio://) est rejeté.
+    // On passe par notre propre endpoint /subscriptions/callback qui redirige vers le
+    // deep link après paiement.
+    const monerooReturnUrl = `${env.PUBLIC_BASE_URL}/subscriptions/callback?returnUrl=${encodeURIComponent(returnUrl)}`;
+
     const { checkoutUrl } = await initiateProCheckout({
-      userId: user.id,
-      email: user.email,
+      userId:   user.id,
+      email:    user.email,
       firstName,
       lastName,
-      amount: 2000,
+      amount:   MONEROO_AMOUNTS[billingPeriod],
       currency: "XOF",
-      returnUrl,
+      returnUrl: monerooReturnUrl,
     });
     return c.json({ checkoutUrl }, HttpStatusCodes.OK);
   } catch (error) {

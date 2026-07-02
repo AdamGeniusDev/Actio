@@ -69,46 +69,63 @@
     "quote": "\"Dominez vos objectifs\nsans limites.\""
   },
   "checkout": {
-    "header": "Finaliser votre commande",
+    "header": {
+      "title": "Finaliser votre commande"
+    },
     "errors": {
       "generic": "Impossible de créer le paiement pour le moment, réessayez."
     },
-    "plan": {
-      "yearly": "Pro Annuel",
-      "monthly": "Pro Mensuel",
-      "desc": "Accès illimité aux outils de performance"
-    },
     "summary": {
+      "planLabel": {
+        "yearly": "Pro Annuel",
+        "monthly": "Pro Mensuel"
+      },
+      "planDesc": "Accès illimité aux outils de performance",
       "subtotal": "Sous-total",
       "tax": "TVA",
       "total": "Total",
-      "secure": "Secure Checkout"
+      "secureBadge": "Paiement Sécurisé"
     },
-    "methods": {
-      "label": "Moyen de paiement",
-      "card": "Carte",
-      "mobileMoney": "Mobile Money"
-    },
-    "card": {
-      "number": "Numéro de carte",
-      "expiry": "Expiration"
-    },
-    "mobileMoney": {
-      "operator": "Choisissez votre opérateur",
-      "phone": "Numéro de téléphone",
-      "note": "Vous recevrez une demande de confirmation sur votre téléphone. Le paiement est sécurisé via Moneroo."
-    },
-    "paypal": {
-      "redirect": "Vous serez redirigé vers PayPal pour finaliser le paiement."
-    },
-    "applePay": {
-      "prompt": "Appuyez sur le bouton Apple Pay pour confirmer."
+    "payment": {
+      "sectionTitle": "Moyen de paiement",
+      "methods": {
+        "card": "Carte",
+        "mobileMoney": "Mobile Money",
+        "paypal": "PayPal",
+        "applePay": "Apple Pay"
+      },
+      "card": {
+        "numberLabel": "Numéro de carte",
+        "numberPlaceholder": "1234 5678 9012 3456",
+        "expiryLabel": "Expiration",
+        "expiryPlaceholder": "MM/AA",
+        "cvcLabel": "CVC",
+        "cvcPlaceholder": "***"
+      },
+      "mobileMoney": {
+        "operatorLabel": "Choisissez votre opérateur",
+        "operators": {
+          "mtn": "MTN",
+          "orange": "Orange",
+          "wave": "Wave",
+          "moov": "Moov"
+        },
+        "phoneLabel": "Numéro de téléphone",
+        "phonePlaceholder": "+225 00 00 00 00"
+      },
+      "redirect": {
+        "applePay": "Appuyez sur le bouton Apple Pay pour confirmer.",
+        "paypal": "Vous serez redirigé vers PayPal pour finaliser le paiement."
+      }
     },
     "trust": {
       "ssl": "SSL Certifié",
       "encrypted": "Paiement Chiffré",
       "guarantee": "30 jours satisfait"
     },
-    "cta": "Confirmer et Payer"
+    "cta": {
+      "submit": "Confirmer et Payer",
+      "processing": "En cours..."
+    }
   }
 }
